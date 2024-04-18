@@ -35,7 +35,9 @@ class User < ApplicationRecord
   accepts_nested_attributes_for :partner
 
   devise :database_authenticatable, 
-         :recoverable, :rememberable
+         :rememberable
+
+        #  :recoverable, 
 
   def password=(new_password)
     @password = new_password

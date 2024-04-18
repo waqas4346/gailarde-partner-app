@@ -26,5 +26,3 @@
 #   end
 
 # end
-
-heroku addons:create heroku-postgresql:gailarde -a gailarde-partner-app
