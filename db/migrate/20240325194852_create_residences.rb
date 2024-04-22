@@ -13,6 +13,7 @@ class CreateResidences < ActiveRecord::Migration[7.1]
       t.boolean :delivery_into_room, null: false, default: false
       t.string :delivery_pickup_location, null: false, default: ""
       t.boolean :delivery_reception, null: false, default: false
+      t.boolean :manned_reception, null: false, default: false
       t.boolean :no_pallets, null: false, default: false
       t.string :delivery_general_info, null: false, default: ""
       t.string :what_word_first, default: ""
