@@ -59,30 +59,30 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_13_152201) do
   create_table "partners", force: :cascade do |t|
     t.string "name", default: "", null: false
     t.string "parameter", default: "", null: false
-    t.string "logo", default: "", null: false
-    t.string "customer_group", default: "", null: false
-    t.decimal "commission", precision: 10, scale: 2, default: "0.0", null: false
-    t.string "contact_email", default: ""
-    t.string "contact_number", default: ""
-    t.text "working_hours", default: "", null: false
+    t.string "logo", default: ""
+    t.string "customer_group", default: ""
+    t.decimal "commission", precision: 10, scale: 2, default: "0.0"
+    t.string "contact_email", default: "", null: false
+    t.string "contact_number", default: "", null: false
+    t.text "working_hours", default: ""
     t.string "consolidated_name", default: ""
     t.string "consolidated_email", default: ""
     t.string "consolidated_number", default: ""
-    t.integer "beds", default: 0, null: false
-    t.integer "students", default: 0, null: false
-    t.decimal "previous_year_uptake", precision: 10, scale: 2, default: "0.0", null: false
-    t.decimal "international_students_percentage", precision: 10, scale: 2, default: "0.0", null: false
-    t.text "extra_internal_info", default: "", null: false
-    t.boolean "banner", default: false, null: false
-    t.text "banner_info", default: "", null: false
-    t.boolean "checkout", default: false, null: false
-    t.text "checkout_info", default: "", null: false
-    t.string "landing_page", default: "", null: false
-    t.string "hub_spot_id", default: "", null: false
+    t.integer "beds", default: 0
+    t.integer "students", default: 0
+    t.decimal "previous_year_uptake", precision: 10, scale: 2, default: "0.0"
+    t.decimal "international_students_percentage", precision: 10, scale: 2, default: "0.0"
+    t.text "extra_internal_info", default: ""
+    t.boolean "banner", default: false
+    t.text "banner_info", default: ""
+    t.boolean "checkout", default: false
+    t.text "checkout_info", default: ""
+    t.string "landing_page", default: ""
+    t.string "hub_spot_id", default: ""
     t.datetime "main_intake_date"
-    t.boolean "discount_code", default: false, null: false
-    t.string "discount_code_value", default: "", null: false
-    t.string "order_info_level", null: false
+    t.boolean "discount_code", default: false
+    t.string "discount_code_value", default: ""
+    t.string "order_info_level"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
