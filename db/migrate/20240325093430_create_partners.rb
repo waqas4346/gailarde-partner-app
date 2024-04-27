@@ -36,7 +36,7 @@ class CreatePartners < ActiveRecord::Migration[7.1]
 
       
       
-      t.timestamps
+      t.timestamps null: true
     end
   end
 end

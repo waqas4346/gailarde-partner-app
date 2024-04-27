@@ -4,8 +4,8 @@
 #
 #  id           :bigint           not null, primary key
 #  name         :string           default(""), not null
-#  created_at   :datetime         not null
-#  updated_at   :datetime         not null
+#  created_at   :datetime
+#  updated_at   :datetime
 #  block_id     :bigint
 #  residence_id :bigint
 #  sub_block_id :bigint

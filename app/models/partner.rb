@@ -28,8 +28,8 @@
 #  previous_year_uptake              :decimal(10, 2)   default(0.0), not null
 #  students                          :integer          default(0), not null
 #  working_hours                     :text             default(""), not null
-#  created_at                        :datetime         not null
-#  updated_at                        :datetime         not null
+#  created_at                        :datetime
+#  updated_at                        :datetime
 #  hub_spot_id                       :string           default(""), not null
 #
 class Partner < ApplicationRecord

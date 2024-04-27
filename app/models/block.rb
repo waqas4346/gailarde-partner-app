@@ -7,8 +7,8 @@
 #  what_word_first  :string           default("")
 #  what_word_second :string           default("")
 #  what_word_third  :string           default("")
-#  created_at       :datetime         not null
-#  updated_at       :datetime         not null
+#  created_at       :datetime
+#  updated_at       :datetime
 #  residence_id     :bigint           not null
 #
 # Indexes

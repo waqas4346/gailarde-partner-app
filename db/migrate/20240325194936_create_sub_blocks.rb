@@ -6,7 +6,7 @@ class CreateSubBlocks < ActiveRecord::Migration[7.1]
       t.string :what_word_second, default: ""
       t.string :what_word_third, default: ""
       t.references :block, null: false
-      t.timestamps
+      t.timestamps null: true
     end
     add_foreign_key :sub_blocks, :blocks, on_delete: :cascade
   end

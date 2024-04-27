@@ -10,6 +10,7 @@
 #  delivery_into_room       :boolean          default(FALSE), not null
 #  delivery_pickup_location :string           default(""), not null
 #  delivery_reception       :boolean          default(FALSE), not null
+#  manned_reception         :boolean          default(FALSE), not null
 #  name                     :string           default(""), not null
 #  no_pallets               :boolean          default(FALSE), not null
 #  pre_arrival_delivery     :integer
@@ -18,8 +19,8 @@
 #  what_word_first          :string           default("")
 #  what_word_second         :string           default("")
 #  what_word_third          :string           default("")
-#  created_at               :datetime         not null
-#  updated_at               :datetime         not null
+#  created_at               :datetime
+#  updated_at               :datetime
 #  partner_id               :bigint           not null
 #
 # Indexes

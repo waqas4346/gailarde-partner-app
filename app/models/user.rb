@@ -6,15 +6,15 @@
 #  email                  :string           default(""), not null
 #  encrypted_password     :string           default(""), not null
 #  first_name             :string           default(""), not null
+#  info_field_internal    :string           default("")
 #  last_name              :string           default(""), not null
 #  phone_number           :string           default(""), not null
 #  position               :string           default(""), not null
 #  remember_created_at    :datetime
 #  reset_password_sent_at :datetime
 #  reset_password_token   :string
-#  role                   :string           default("admin_partner"), not null
-#  created_at             :datetime         not null
-#  updated_at             :datetime         not null
+#  created_at             :datetime
+#  updated_at             :datetime
 #  partner_id             :bigint           not null
 #
 # Indexes

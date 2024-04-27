@@ -21,8 +21,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_13_152201) do
     t.bigint "resource_id"
     t.string "author_type"
     t.bigint "author_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.index ["author_type", "author_id"], name: "index_active_admin_comments_on_author"
     t.index ["namespace"], name: "index_active_admin_comments_on_namespace"
     t.index ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource"
@@ -38,8 +38,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_13_152201) do
     t.bigint "residence_id"
     t.bigint "block_id"
     t.bigint "sub_block_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.index ["block_id"], name: "index_addresses_on_block_id"
     t.index ["residence_id"], name: "index_addresses_on_residence_id"
     t.index ["sub_block_id"], name: "index_addresses_on_sub_block_id"
@@ -51,8 +51,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_13_152201) do
     t.string "what_word_second", default: ""
     t.string "what_word_third", default: ""
     t.bigint "residence_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.index ["residence_id"], name: "index_blocks_on_residence_id"
   end
 
@@ -83,8 +83,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_13_152201) do
     t.boolean "discount_code", default: false, null: false
     t.string "discount_code_value", default: "", null: false
     t.string "order_info_level", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "residences", force: :cascade do |t|
@@ -98,14 +98,15 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_13_152201) do
     t.boolean "delivery_into_room", default: false, null: false
     t.string "delivery_pickup_location", default: "", null: false
     t.boolean "delivery_reception", default: false, null: false
+    t.boolean "manned_reception", default: false, null: false
     t.boolean "no_pallets", default: false, null: false
     t.string "delivery_general_info", default: "", null: false
     t.string "what_word_first", default: ""
     t.string "what_word_second", default: ""
     t.string "what_word_third", default: ""
     t.bigint "partner_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.index ["partner_id"], name: "index_residences_on_partner_id"
   end
 
@@ -114,8 +115,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_13_152201) do
     t.bigint "residence_id"
     t.bigint "block_id"
     t.bigint "sub_block_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.index ["block_id"], name: "index_rooms_on_block_id"
     t.index ["residence_id"], name: "index_rooms_on_residence_id"
     t.index ["sub_block_id"], name: "index_rooms_on_sub_block_id"
@@ -127,24 +128,24 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_13_152201) do
     t.string "what_word_second", default: ""
     t.string "what_word_third", default: ""
     t.bigint "block_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.index ["block_id"], name: "index_sub_blocks_on_block_id"
   end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
-    t.string "role", default: "admin_partner", null: false
     t.string "first_name", default: "", null: false
     t.string "last_name", default: "", null: false
     t.string "position", default: "", null: false
     t.string "phone_number", default: "", null: false
+    t.string "info_field_internal", default: ""
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.bigint "partner_id", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["partner_id"], name: "index_users_on_partner_id"
