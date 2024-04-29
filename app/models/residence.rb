@@ -6,16 +6,16 @@
 #  contact_email            :string           default(""), not null
 #  contact_name             :string           default(""), not null
 #  contact_phone            :string           default(""), not null
-#  delivery_general_info    :string           default(""), not null
-#  delivery_into_room       :boolean          default(FALSE), not null
-#  delivery_pickup_location :string           default(""), not null
-#  delivery_reception       :boolean          default(FALSE), not null
-#  manned_reception         :boolean          default(FALSE), not null
+#  delivery_general_info    :string           default("")
+#  delivery_into_room       :boolean          default(FALSE)
+#  delivery_pickup_location :string           default("")
+#  delivery_reception       :boolean          default(FALSE)
+#  manned_reception         :boolean          default(FALSE)
 #  name                     :string           default(""), not null
-#  no_pallets               :boolean          default(FALSE), not null
+#  no_pallets               :boolean          default(FALSE)
 #  pre_arrival_delivery     :integer
-#  vehicle_size             :string           default(""), not null
-#  weekend_delivery         :boolean          default(FALSE), not null
+#  vehicle_size             :string           default("")
+#  weekend_delivery         :boolean          default(FALSE)
 #  what_word_first          :string           default("")
 #  what_word_second         :string           default("")
 #  what_word_third          :string           default("")

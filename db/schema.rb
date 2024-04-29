@@ -89,18 +89,18 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_13_152201) do
 
   create_table "residences", force: :cascade do |t|
     t.string "name", default: "", null: false
-    t.boolean "weekend_delivery", default: false, null: false
+    t.boolean "weekend_delivery", default: false
     t.integer "pre_arrival_delivery"
     t.string "contact_name", default: "", null: false
     t.string "contact_email", default: "", null: false
     t.string "contact_phone", default: "", null: false
-    t.string "vehicle_size", default: "", null: false
-    t.boolean "delivery_into_room", default: false, null: false
-    t.string "delivery_pickup_location", default: "", null: false
-    t.boolean "delivery_reception", default: false, null: false
-    t.boolean "manned_reception", default: false, null: false
-    t.boolean "no_pallets", default: false, null: false
-    t.string "delivery_general_info", default: "", null: false
+    t.string "vehicle_size", default: ""
+    t.boolean "delivery_into_room", default: false
+    t.string "delivery_pickup_location", default: ""
+    t.boolean "delivery_reception", default: false
+    t.boolean "manned_reception", default: false
+    t.boolean "no_pallets", default: false
+    t.string "delivery_general_info", default: ""
     t.string "what_word_first", default: ""
     t.string "what_word_second", default: ""
     t.string "what_word_third", default: ""
