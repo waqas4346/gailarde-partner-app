@@ -55,6 +55,7 @@ gem 'pundit'
 gem 'sassc'
 gem 'letter_opener'
 
+gem 'active_model_serializers'
 
 
 group :development, :test do

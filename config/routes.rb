@@ -8,7 +8,22 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
   # Defines the root path route ("/")
+  
+
+
+  namespace :api do
+    resources :partners
+    
+  end
   root to: 'admin/dashboard#index'
-  get '*path', to: 'application#redirect_to_root', via: :all
+
+  # root to: 'application#redirect_to_root', constraints: ->(request) { !request.env['PATH_INFO'].start_with?('/admin') }
+
+  get '*path', to: 'admin/dashboard#index', constraints: ->(request) { !request.env['PATH_INFO'].start_with?('/admin') }
+
+  get '/admin/*path', to: 'admin/dashboard#index'
+
+
+
 
 end

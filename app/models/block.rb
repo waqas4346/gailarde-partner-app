@@ -21,6 +21,7 @@
 #
 class Block < ApplicationRecord
   belongs_to :residence
-  has_one :sub_block, dependent: :destroy
+  has_many :sub_blocks, dependent: :destroy
   has_many :rooms, dependent: :destroy
+  has_many :addresses, dependent: :destroy
 end

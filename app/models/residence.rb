@@ -34,8 +34,9 @@
 class Residence < ApplicationRecord
 
   belongs_to :partner
-  has_one :block, dependent: :destroy
+  has_many :blocks, dependent: :destroy
   has_many :rooms, dependent: :destroy
+  has_many :addresses, dependent: :destroy
 
 
 end
