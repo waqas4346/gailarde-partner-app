@@ -56,6 +56,7 @@ gem 'sassc'
 gem 'letter_opener'
 
 gem 'active_model_serializers'
+gem 'rack-cors', require: 'rack/cors'
 
 
 group :development, :test do
@@ -74,6 +75,7 @@ group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
 end
+
 
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]

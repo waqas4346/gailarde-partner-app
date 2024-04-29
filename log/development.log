@@ -11461,3 +11461,20 @@ Processing by Api::PartnersController#index as HTML
 Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.4ms | Allocations: 1488)
 
 
+Started GET "/api/partners" for ::1 at 2024-04-30 04:25:20 +0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::PartnersController#index as HTML
+  [1m[36mPartner Load (0.8ms)[0m  [1m[34mSELECT "partners".* FROM "partners"[0m
+  ↳ app/controllers/api/partners_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.18ms)
+Completed 200 OK in 98ms (Views: 57.9ms | ActiveRecord: 7.5ms | Allocations: 10904)
+
+
+Started GET "/api/partners" for ::1 at 2024-04-30 04:25:22 +0500
+Processing by Api::PartnersController#index as HTML
+  [1m[36mPartner Load (0.7ms)[0m  [1m[34mSELECT "partners".* FROM "partners"[0m
+  ↳ app/controllers/api/partners_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.06ms)
+Completed 200 OK in 4ms (Views: 2.4ms | ActiveRecord: 0.7ms | Allocations: 1496)
+
+
