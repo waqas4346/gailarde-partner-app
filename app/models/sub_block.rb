@@ -22,4 +22,5 @@
 class SubBlock < ApplicationRecord
   belongs_to :block
   has_many :rooms, dependent: :destroy
+  has_many :addresses, dependent: :destroy
 end
