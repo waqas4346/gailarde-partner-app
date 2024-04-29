@@ -11419,3 +11419,28 @@ Processing by Api::PartnersController#index as HTML
 Completed 200 OK in 44ms (Views: 38.1ms | ActiveRecord: 4.9ms | Allocations: 15165)
 
 
+Started GET "/api/partners" for ::1 at 2024-04-29 16:48:30 +0500
+  [1m[36mActiveRecord::SchemaMigration Load (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::PartnersController#index as HTML
+  [1m[36mPartner Load (1.9ms)[0m  [1m[34mSELECT "partners".* FROM "partners"[0m
+  ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.16ms)
+Completed 200 OK in 91ms (Views: 53.2ms | ActiveRecord: 6.9ms | Allocations: 10926)
+
+
+Started GET "/api/partners" for ::1 at 2024-04-29 16:48:32 +0500
+Processing by Api::PartnersController#index as HTML
+  [1m[36mPartner Load (0.4ms)[0m  [1m[34mSELECT "partners".* FROM "partners"[0m
+  ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.06ms)
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.4ms | Allocations: 1486)
+
+
+Started GET "/api/partners" for ::1 at 2024-04-29 16:48:33 +0500
+Processing by Api::PartnersController#index as HTML
+  [1m[36mPartner Load (0.4ms)[0m  [1m[34mSELECT "partners".* FROM "partners"[0m
+  ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.06ms)
+Completed 200 OK in 4ms (Views: 2.1ms | ActiveRecord: 0.4ms | Allocations: 1234)
+
+

@@ -21,5 +21,5 @@
 #
 class SubBlock < ApplicationRecord
   belongs_to :block
-  has_many :room, dependent: :destroy
+  has_many :rooms, dependent: :destroy
 end
