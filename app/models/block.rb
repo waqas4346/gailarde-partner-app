@@ -3,6 +3,7 @@
 # Table name: blocks
 #
 #  id               :bigint           not null, primary key
+#  active           :boolean          default(TRUE)
 #  name             :string           default(""), not null
 #  what_word_first  :string           default("")
 #  what_word_second :string           default("")

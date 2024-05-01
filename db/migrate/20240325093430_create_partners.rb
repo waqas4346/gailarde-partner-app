@@ -31,6 +31,7 @@ class CreatePartners < ActiveRecord::Migration[7.1]
       t.datetime :main_intake_date
 
       t.boolean :discount_code,  default: false
+      t.boolean :active,  default: true
       t.string :discount_code_value,  default: ""
       t.string :order_info_level
 

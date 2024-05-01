@@ -5,6 +5,7 @@ class CreateSubBlocks < ActiveRecord::Migration[7.1]
       t.string :what_word_first, default: ""
       t.string :what_word_second, default: ""
       t.string :what_word_third, default: ""
+      t.boolean :active,  default: true
       t.references :block, null: false
       t.timestamps null: true
     end

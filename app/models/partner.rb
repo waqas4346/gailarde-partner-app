@@ -3,6 +3,7 @@
 # Table name: partners
 #
 #  id                                :bigint           not null, primary key
+#  active                            :boolean          default(TRUE)
 #  banner                            :boolean          default(FALSE)
 #  banner_info                       :text             default("")
 #  beds                              :integer          default(0)

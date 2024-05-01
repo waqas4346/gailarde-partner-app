@@ -3,10 +3,11 @@
 # Table name: residences
 #
 #  id                       :bigint           not null, primary key
+#  active                   :boolean          default(TRUE)
 #  contact_email            :string           default(""), not null
 #  contact_name             :string           default(""), not null
 #  contact_phone            :string           default(""), not null
-#  delivery_general_info    :string           default("")
+#  delivery_general_info    :text             default("")
 #  delivery_into_room       :boolean          default(FALSE)
 #  delivery_pickup_location :string           default("")
 #  delivery_reception       :boolean          default(FALSE)

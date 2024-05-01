@@ -15,11 +15,11 @@ class CreateResidences < ActiveRecord::Migration[7.1]
       t.boolean :delivery_reception, default: false
       t.boolean :manned_reception,  default: false
       t.boolean :no_pallets, default: false
-      t.string :delivery_general_info, default: ""
+      t.text :delivery_general_info, default: ""
       t.string :what_word_first, default: ""
       t.string :what_word_second, default: ""
       t.string :what_word_third, default: ""
-
+      t.boolean :active,  default: true
       t.references :partner, null: false
       t.timestamps null: true
     end

@@ -50,6 +50,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_13_152201) do
     t.string "what_word_first", default: ""
     t.string "what_word_second", default: ""
     t.string "what_word_third", default: ""
+    t.boolean "active", default: true
     t.bigint "residence_id", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -81,6 +82,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_13_152201) do
     t.string "hub_spot_id", default: ""
     t.datetime "main_intake_date"
     t.boolean "discount_code", default: false
+    t.boolean "active", default: true
     t.string "discount_code_value", default: ""
     t.string "order_info_level"
     t.datetime "created_at"
@@ -100,10 +102,11 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_13_152201) do
     t.boolean "delivery_reception", default: false
     t.boolean "manned_reception", default: false
     t.boolean "no_pallets", default: false
-    t.string "delivery_general_info", default: ""
+    t.text "delivery_general_info", default: ""
     t.string "what_word_first", default: ""
     t.string "what_word_second", default: ""
     t.string "what_word_third", default: ""
+    t.boolean "active", default: true
     t.bigint "partner_id", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -127,6 +130,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_13_152201) do
     t.string "what_word_first", default: ""
     t.string "what_word_second", default: ""
     t.string "what_word_third", default: ""
+    t.boolean "active", default: true
     t.bigint "block_id", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -138,9 +142,9 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_13_152201) do
     t.string "encrypted_password", default: "", null: false
     t.string "first_name", default: "", null: false
     t.string "last_name", default: "", null: false
-    t.string "position", default: "", null: false
+    t.text "position", default: "", null: false
     t.string "phone_number", default: "", null: false
-    t.string "info_field_internal", default: ""
+    t.text "info_field_internal", default: ""
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
