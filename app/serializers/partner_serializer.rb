@@ -33,6 +33,9 @@
 #  updated_at                        :datetime
 #  hub_spot_id                       :string           default("")
 #
+
+require 'iso_country_codes'
+
 class PartnerSerializer < ActiveModel::Serializer
   attributes :id, :name, :active
 
@@ -68,7 +71,14 @@ class PartnerSerializer < ActiveModel::Serializer
       end
     
       def countryCode
-        object.country
+
+        country = IsoCountryCodes.search_by_name(object.country)
+        if country
+          return country[0]&.alpha2
+        else
+          return nil
+        end
+
       end
     end
 
@@ -96,9 +106,14 @@ class PartnerSerializer < ActiveModel::Serializer
         def zip
           object.postcode
         end
-      
+
         def countryCode
-          object.country
+          country = IsoCountryCodes.search_by_name(object.country)
+          if country
+            return country[0]&.alpha2
+          else
+            return nil
+          end
         end
       end
 
@@ -126,7 +141,13 @@ class PartnerSerializer < ActiveModel::Serializer
           end
         
           def countryCode
-            object.country
+            country = IsoCountryCodes.search_by_name(object.country)
+            if country
+              return country[0]&.alpha2
+            else
+              return nil
+            end
+    
           end
         end
       end

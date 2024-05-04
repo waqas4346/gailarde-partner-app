@@ -166,6 +166,7 @@ GEM
     irb (1.12.0)
       rdoc
       reline (>= 0.4.2)
+    iso_country_codes (0.7.8)
     jbuilder (2.11.5)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
@@ -348,6 +349,7 @@ DEPENDENCIES
   devise
   draper
   importmap-rails
+  iso_country_codes
   jbuilder
   letter_opener
   pg (~> 1.1)

@@ -58,7 +58,7 @@ gem 'letter_opener'
 gem 'active_model_serializers'
 gem 'rack-cors', require: 'rack/cors'
 
-
+gem 'iso_country_codes'
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mswin mswin64 mingw x64_mingw ]
