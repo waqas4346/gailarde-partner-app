@@ -11600,3 +11600,1325 @@ FOREIGN KEY ("sub_block_id")
   [1m[35m (1.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(2326345832472128565)[0m
   [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/api/partners" for ::1 at 2024-05-03 15:59:05 +0500
+  [1m[36mActiveRecord::SchemaMigration Load (4.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::PartnersController#index as HTML
+  [1m[36mPartner Load (1.9ms)[0m  [1m[34mSELECT "partners".* FROM "partners"[0m
+  ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.91ms)
+Completed 200 OK in 228ms (Views: 81.4ms | ActiveRecord: 9.2ms | Allocations: 9805)
+
+
+Started GET "/api/partners" for ::1 at 2024-05-03 15:59:11 +0500
+Processing by Api::PartnersController#index as HTML
+  [1m[36mPartner Load (0.5ms)[0m  [1m[34mSELECT "partners".* FROM "partners"[0m
+  ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.42ms)
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.5ms | Allocations: 1344)
+
+
+Started GET "/api/partners" for ::1 at 2024-05-03 15:59:13 +0500
+Processing by Api::PartnersController#index as HTML
+  [1m[36mPartner Load (0.5ms)[0m  [1m[34mSELECT "partners".* FROM "partners"[0m
+  ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.07ms)
+Completed 200 OK in 6ms (Views: 3.4ms | ActiveRecord: 0.5ms | Allocations: 1121)
+
+
+Started GET "/api/partners" for ::1 at 2024-05-03 15:59:14 +0500
+Processing by Api::PartnersController#index as HTML
+  [1m[36mPartner Load (0.4ms)[0m  [1m[34mSELECT "partners".* FROM "partners"[0m
+  ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.39ms)
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.4ms | Allocations: 1121)
+
+
+Started GET "/api/partners" for ::1 at 2024-05-03 16:02:26 +0500
+  [1m[36mActiveRecord::SchemaMigration Load (184.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::PartnersController#index as HTML
+  [1m[36mPartner Load (430.3ms)[0m  [1m[34mSELECT "partners".* FROM "partners"[0m
+  ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mResidence Load (178.6ms)[0m  [1m[34mSELECT "residences".* FROM "residences" WHERE "residences"."partner_id" = $1[0m  [["partner_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mResidence Load (177.9ms)[0m  [1m[34mSELECT "residences".* FROM "residences" WHERE "residences"."partner_id" = $1[0m  [["partner_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBlock Load (178.4ms)[0m  [1m[34mSELECT "blocks".* FROM "blocks" WHERE "blocks"."residence_id" = $1[0m  [["residence_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (184.6ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."residence_id" = $1[0m  [["residence_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (189.8ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."residence_id" = $1[0m  [["residence_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBlock Load (179.9ms)[0m  [1m[34mSELECT "blocks".* FROM "blocks" WHERE "blocks"."residence_id" = $1[0m  [["residence_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (176.8ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."residence_id" = $1[0m  [["residence_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (178.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."residence_id" = $1[0m  [["residence_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSubBlock Load (177.9ms)[0m  [1m[34mSELECT "sub_blocks".* FROM "sub_blocks" WHERE "sub_blocks"."block_id" = $1[0m  [["block_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (175.9ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."block_id" = $1[0m  [["block_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (176.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."block_id" = $1[0m  [["block_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSubBlock Load (175.7ms)[0m  [1m[34mSELECT "sub_blocks".* FROM "sub_blocks" WHERE "sub_blocks"."block_id" = $1[0m  [["block_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (175.7ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."block_id" = $1[0m  [["block_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (175.8ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."block_id" = $1[0m  [["block_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSubBlock Load (176.6ms)[0m  [1m[34mSELECT "sub_blocks".* FROM "sub_blocks" WHERE "sub_blocks"."block_id" = $1[0m  [["block_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (178.9ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."block_id" = $1[0m  [["block_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (182.2ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."block_id" = $1[0m  [["block_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (176.7ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."sub_block_id" = $1[0m  [["sub_block_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (177.3ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."sub_block_id" = $1[0m  [["sub_block_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBlock Load (175.8ms)[0m  [1m[34mSELECT "blocks".* FROM "blocks" WHERE "blocks"."residence_id" = $1[0m  [["residence_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (177.0ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."residence_id" = $1[0m  [["residence_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (177.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."residence_id" = $1[0m  [["residence_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBlock Load (176.4ms)[0m  [1m[34mSELECT "blocks".* FROM "blocks" WHERE "blocks"."residence_id" = $1[0m  [["residence_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (176.4ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."residence_id" = $1[0m  [["residence_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (178.4ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."residence_id" = $1[0m  [["residence_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSubBlock Load (176.3ms)[0m  [1m[34mSELECT "sub_blocks".* FROM "sub_blocks" WHERE "sub_blocks"."block_id" = $1[0m  [["block_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (175.4ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."block_id" = $1[0m  [["block_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (197.7ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."block_id" = $1[0m  [["block_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSubBlock Load (176.5ms)[0m  [1m[34mSELECT "sub_blocks".* FROM "sub_blocks" WHERE "sub_blocks"."block_id" = $1[0m  [["block_id", 5]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (181.8ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."block_id" = $1[0m  [["block_id", 5]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (177.4ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."block_id" = $1[0m  [["block_id", 5]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (175.7ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."sub_block_id" = $1[0m  [["sub_block_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (176.6ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."sub_block_id" = $1[0m  [["sub_block_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (176.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."sub_block_id" = $1[0m  [["sub_block_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (181.6ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."sub_block_id" = $1[0m  [["sub_block_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (177.0ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."sub_block_id" = $1[0m  [["sub_block_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (175.5ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."sub_block_id" = $1[0m  [["sub_block_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (175.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."sub_block_id" = $1[0m  [["sub_block_id", 5]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (175.5ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."sub_block_id" = $1[0m  [["sub_block_id", 5]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSubBlock Load (175.9ms)[0m  [1m[34mSELECT "sub_blocks".* FROM "sub_blocks" WHERE "sub_blocks"."block_id" = $1[0m  [["block_id", 6]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (175.8ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."block_id" = $1[0m  [["block_id", 6]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (176.8ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."block_id" = $1[0m  [["block_id", 6]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSubBlock Load (181.5ms)[0m  [1m[34mSELECT "sub_blocks".* FROM "sub_blocks" WHERE "sub_blocks"."block_id" = $1[0m  [["block_id", 7]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (177.9ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."block_id" = $1[0m  [["block_id", 7]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (176.5ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."block_id" = $1[0m  [["block_id", 7]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (176.0ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."sub_block_id" = $1[0m  [["sub_block_id", 6]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (177.0ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."sub_block_id" = $1[0m  [["sub_block_id", 6]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (175.5ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."sub_block_id" = $1[0m  [["sub_block_id", 7]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (175.5ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."sub_block_id" = $1[0m  [["sub_block_id", 7]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (175.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."sub_block_id" = $1[0m  [["sub_block_id", 8]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (175.4ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."sub_block_id" = $1[0m  [["sub_block_id", 8]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (175.4ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."sub_block_id" = $1[0m  [["sub_block_id", 9]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (175.7ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."sub_block_id" = $1[0m  [["sub_block_id", 9]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (13337.44ms)
+Completed 200 OK in 17340ms (Views: 3324.7ms | ActiveRecord: 13992.1ms | Allocations: 191178)
+
+
+Started GET "/api/partners" for ::1 at 2024-05-03 16:26:07 +0500
+Processing by Api::PartnersController#index as HTML
+  [1m[36mPartner Load (2853.0ms)[0m  [1m[34mSELECT "partners".* FROM "partners"[0m
+  ↳ app/controllers/api/partners_controller.rb:5:in `index'
+Completed 500 Internal Server Error in 2886ms (ActiveRecord: 4226.2ms | Allocations: 17344)
+
+
+  
+SyntaxError (/Users/apple/Projects/Gailarde/dashboard/gailarde-partner-app/app/serializers/partner_serializer.rb:87: syntax error, unexpected ':', expecting `end'
+...tributes :address1, :address2 :city, :zip, :countryCode
+...                              ^
+/Users/apple/Projects/Gailarde/dashboard/gailarde-partner-app/app/serializers/partner_serializer.rb:87: syntax error, unexpected ',', expecting '.' or &. or :: or '['
+...ddress1, :address2 :city, :zip, :countryCode
+...                              ^
+):
+  
+app/serializers/partner_serializer.rb:87: syntax error, unexpected ':', expecting `end'
+app/serializers/partner_serializer.rb:87: syntax error, unexpected ',', expecting '.' or &. or :: or '['
+app/controllers/api/partners_controller.rb:5:in `index'
+Started GET "/api/partners" for ::1 at 2024-05-03 16:27:10 +0500
+Processing by Api::PartnersController#index as HTML
+  [1m[36mPartner Load (341.6ms)[0m  [1m[34mSELECT "partners".* FROM "partners"[0m
+  ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mResidence Load (174.6ms)[0m  [1m[34mSELECT "residences".* FROM "residences" WHERE "residences"."partner_id" = $1[0m  [["partner_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mResidence Load (179.8ms)[0m  [1m[34mSELECT "residences".* FROM "residences" WHERE "residences"."partner_id" = $1[0m  [["partner_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBlock Load (171.4ms)[0m  [1m[34mSELECT "blocks".* FROM "blocks" WHERE "blocks"."residence_id" = $1[0m  [["residence_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (172.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."residence_id" = $1[0m  [["residence_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (174.2ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."residence_id" = $1[0m  [["residence_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBlock Load (172.3ms)[0m  [1m[34mSELECT "blocks".* FROM "blocks" WHERE "blocks"."residence_id" = $1[0m  [["residence_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (170.9ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."residence_id" = $1[0m  [["residence_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (171.4ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."residence_id" = $1[0m  [["residence_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSubBlock Load (170.8ms)[0m  [1m[34mSELECT "sub_blocks".* FROM "sub_blocks" WHERE "sub_blocks"."block_id" = $1[0m  [["block_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (171.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."block_id" = $1[0m  [["block_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (170.7ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."block_id" = $1[0m  [["block_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSubBlock Load (170.7ms)[0m  [1m[34mSELECT "sub_blocks".* FROM "sub_blocks" WHERE "sub_blocks"."block_id" = $1[0m  [["block_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (170.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."block_id" = $1[0m  [["block_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (171.6ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."block_id" = $1[0m  [["block_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSubBlock Load (170.9ms)[0m  [1m[34mSELECT "sub_blocks".* FROM "sub_blocks" WHERE "sub_blocks"."block_id" = $1[0m  [["block_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (170.9ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."block_id" = $1[0m  [["block_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (171.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."block_id" = $1[0m  [["block_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (170.7ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."sub_block_id" = $1[0m  [["sub_block_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (171.3ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."sub_block_id" = $1[0m  [["sub_block_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBlock Load (170.7ms)[0m  [1m[34mSELECT "blocks".* FROM "blocks" WHERE "blocks"."residence_id" = $1[0m  [["residence_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (171.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."residence_id" = $1[0m  [["residence_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (171.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."residence_id" = $1[0m  [["residence_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBlock Load (171.5ms)[0m  [1m[34mSELECT "blocks".* FROM "blocks" WHERE "blocks"."residence_id" = $1[0m  [["residence_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (170.9ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."residence_id" = $1[0m  [["residence_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (172.2ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."residence_id" = $1[0m  [["residence_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSubBlock Load (171.6ms)[0m  [1m[34mSELECT "sub_blocks".* FROM "sub_blocks" WHERE "sub_blocks"."block_id" = $1[0m  [["block_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (172.0ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."block_id" = $1[0m  [["block_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (171.2ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."block_id" = $1[0m  [["block_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSubBlock Load (170.6ms)[0m  [1m[34mSELECT "sub_blocks".* FROM "sub_blocks" WHERE "sub_blocks"."block_id" = $1[0m  [["block_id", 5]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (171.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."block_id" = $1[0m  [["block_id", 5]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (170.8ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."block_id" = $1[0m  [["block_id", 5]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (171.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."sub_block_id" = $1[0m  [["sub_block_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (170.6ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."sub_block_id" = $1[0m  [["sub_block_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (170.5ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."sub_block_id" = $1[0m  [["sub_block_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (171.6ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."sub_block_id" = $1[0m  [["sub_block_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (170.7ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."sub_block_id" = $1[0m  [["sub_block_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (170.7ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."sub_block_id" = $1[0m  [["sub_block_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (170.5ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."sub_block_id" = $1[0m  [["sub_block_id", 5]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (171.3ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."sub_block_id" = $1[0m  [["sub_block_id", 5]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSubBlock Load (170.8ms)[0m  [1m[34mSELECT "sub_blocks".* FROM "sub_blocks" WHERE "sub_blocks"."block_id" = $1[0m  [["block_id", 6]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (261.8ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."block_id" = $1[0m  [["block_id", 6]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (173.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."block_id" = $1[0m  [["block_id", 6]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSubBlock Load (420.2ms)[0m  [1m[34mSELECT "sub_blocks".* FROM "sub_blocks" WHERE "sub_blocks"."block_id" = $1[0m  [["block_id", 7]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (171.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."block_id" = $1[0m  [["block_id", 7]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (171.0ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."block_id" = $1[0m  [["block_id", 7]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (170.9ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."sub_block_id" = $1[0m  [["sub_block_id", 6]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (173.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."sub_block_id" = $1[0m  [["sub_block_id", 6]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (170.9ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."sub_block_id" = $1[0m  [["sub_block_id", 7]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (171.2ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."sub_block_id" = $1[0m  [["sub_block_id", 7]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (170.7ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."sub_block_id" = $1[0m  [["sub_block_id", 8]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (171.0ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."sub_block_id" = $1[0m  [["sub_block_id", 8]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (171.5ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."sub_block_id" = $1[0m  [["sub_block_id", 9]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (171.0ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."sub_block_id" = $1[0m  [["sub_block_id", 9]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (13301.87ms)
+Completed 200 OK in 14479ms (Views: 1964.3ms | ActiveRecord: 12405.0ms | Allocations: 131837)
+
+
+Started GET "/api/partners" for ::1 at 2024-05-03 16:35:26 +0500
+Processing by Api::PartnersController#index as HTML
+  [1m[36mPartner Load (2916.9ms)[0m  [1m[34mSELECT "partners".* FROM "partners"[0m
+  ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mResidence Load (176.6ms)[0m  [1m[34mSELECT "residences".* FROM "residences" WHERE "residences"."partner_id" = $1[0m  [["partner_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mResidence Load (178.7ms)[0m  [1m[34mSELECT "residences".* FROM "residences" WHERE "residences"."partner_id" = $1[0m  [["partner_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBlock Load (179.6ms)[0m  [1m[34mSELECT "blocks".* FROM "blocks" WHERE "blocks"."residence_id" = $1[0m  [["residence_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (177.5ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."residence_id" = $1[0m  [["residence_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (176.9ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."residence_id" = $1[0m  [["residence_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBlock Load (176.4ms)[0m  [1m[34mSELECT "blocks".* FROM "blocks" WHERE "blocks"."residence_id" = $1[0m  [["residence_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (178.0ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."residence_id" = $1[0m  [["residence_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (186.5ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."residence_id" = $1[0m  [["residence_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSubBlock Load (176.5ms)[0m  [1m[34mSELECT "sub_blocks".* FROM "sub_blocks" WHERE "sub_blocks"."block_id" = $1[0m  [["block_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (176.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."block_id" = $1[0m  [["block_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (177.7ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."block_id" = $1[0m  [["block_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSubBlock Load (176.2ms)[0m  [1m[34mSELECT "sub_blocks".* FROM "sub_blocks" WHERE "sub_blocks"."block_id" = $1[0m  [["block_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (178.8ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."block_id" = $1[0m  [["block_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (176.3ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."block_id" = $1[0m  [["block_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSubBlock Load (176.5ms)[0m  [1m[34mSELECT "sub_blocks".* FROM "sub_blocks" WHERE "sub_blocks"."block_id" = $1[0m  [["block_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (177.8ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."block_id" = $1[0m  [["block_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (177.0ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."block_id" = $1[0m  [["block_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (176.6ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."sub_block_id" = $1[0m  [["sub_block_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (176.3ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."sub_block_id" = $1[0m  [["sub_block_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (5350.81ms)
+Completed 500 Internal Server Error in 8322ms (ActiveRecord: 7887.3ms | Allocations: 45132)
+
+
+  
+NoMethodError (undefined method `address' for #<AddressSerializer:0x000000010696db68 @object=#<Address id: 1, residence_block: "residence", address: "kshmir block", apartment: "second", city: "lahore", postcode: "54000", country: "pakistan", residence_id: 1, block_id: nil, sub_block_id: nil, created_at: "2024-05-03 16:33:47.725000000 +0000", updated_at: "2024-05-03 16:33:47.725000000 +0000">, @instance_options={:prefixes=>["api/partners", "application"], :template=>"index", :layout=>#<Proc:0x0000000107554d28 /Users/apple/.rvm/gems/ruby-3.1.2/gems/actionview-7.1.3.2/lib/action_view/layouts.rb:395>, :namespace=>Api, :scope=>nil, :scope_name=>:current_user, :serializer_context_class=>ResidenceSerializer}, @root=nil, @scope=nil, @instance_reflections={}, @attributes=nil>
+
+    self.address
+        ^^^^^^^^
+Did you mean?  address2
+               address1):
+  
+app/serializers/partner_serializer.rb:90:in `address1'
+app/serializers/partner_serializer.rb:89:in `attributes'
+app/controllers/api/partners_controller.rb:5:in `index'
+Started GET "/api/partners" for ::1 at 2024-05-03 16:37:28 +0500
+Processing by Api::PartnersController#index as HTML
+  [1m[36mPartner Load (355.9ms)[0m  [1m[34mSELECT "partners".* FROM "partners"[0m
+  ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mResidence Load (177.9ms)[0m  [1m[34mSELECT "residences".* FROM "residences" WHERE "residences"."partner_id" = $1[0m  [["partner_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mResidence Load (178.6ms)[0m  [1m[34mSELECT "residences".* FROM "residences" WHERE "residences"."partner_id" = $1[0m  [["partner_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBlock Load (176.5ms)[0m  [1m[34mSELECT "blocks".* FROM "blocks" WHERE "blocks"."residence_id" = $1[0m  [["residence_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (178.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."residence_id" = $1[0m  [["residence_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (176.4ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."residence_id" = $1[0m  [["residence_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBlock Load (177.1ms)[0m  [1m[34mSELECT "blocks".* FROM "blocks" WHERE "blocks"."residence_id" = $1[0m  [["residence_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (176.5ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."residence_id" = $1[0m  [["residence_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (176.3ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."residence_id" = $1[0m  [["residence_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSubBlock Load (176.5ms)[0m  [1m[34mSELECT "sub_blocks".* FROM "sub_blocks" WHERE "sub_blocks"."block_id" = $1[0m  [["block_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (176.7ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."block_id" = $1[0m  [["block_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (178.2ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."block_id" = $1[0m  [["block_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSubBlock Load (176.2ms)[0m  [1m[34mSELECT "sub_blocks".* FROM "sub_blocks" WHERE "sub_blocks"."block_id" = $1[0m  [["block_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (176.4ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."block_id" = $1[0m  [["block_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (176.5ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."block_id" = $1[0m  [["block_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSubBlock Load (176.2ms)[0m  [1m[34mSELECT "sub_blocks".* FROM "sub_blocks" WHERE "sub_blocks"."block_id" = $1[0m  [["block_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (176.4ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."block_id" = $1[0m  [["block_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (178.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."block_id" = $1[0m  [["block_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (176.8ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."sub_block_id" = $1[0m  [["sub_block_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (176.2ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."sub_block_id" = $1[0m  [["sub_block_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBlock Load (176.9ms)[0m  [1m[34mSELECT "blocks".* FROM "blocks" WHERE "blocks"."residence_id" = $1[0m  [["residence_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (176.6ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."residence_id" = $1[0m  [["residence_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (176.9ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."residence_id" = $1[0m  [["residence_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBlock Load (176.2ms)[0m  [1m[34mSELECT "blocks".* FROM "blocks" WHERE "blocks"."residence_id" = $1[0m  [["residence_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (176.5ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."residence_id" = $1[0m  [["residence_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (177.2ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."residence_id" = $1[0m  [["residence_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSubBlock Load (176.2ms)[0m  [1m[34mSELECT "sub_blocks".* FROM "sub_blocks" WHERE "sub_blocks"."block_id" = $1[0m  [["block_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (176.4ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."block_id" = $1[0m  [["block_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (176.8ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."block_id" = $1[0m  [["block_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSubBlock Load (176.4ms)[0m  [1m[34mSELECT "sub_blocks".* FROM "sub_blocks" WHERE "sub_blocks"."block_id" = $1[0m  [["block_id", 5]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (176.0ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."block_id" = $1[0m  [["block_id", 5]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (176.5ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."block_id" = $1[0m  [["block_id", 5]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (176.4ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."sub_block_id" = $1[0m  [["sub_block_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (176.4ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."sub_block_id" = $1[0m  [["sub_block_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (177.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."sub_block_id" = $1[0m  [["sub_block_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (177.0ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."sub_block_id" = $1[0m  [["sub_block_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (176.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."sub_block_id" = $1[0m  [["sub_block_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (176.2ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."sub_block_id" = $1[0m  [["sub_block_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (176.6ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."sub_block_id" = $1[0m  [["sub_block_id", 5]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (176.7ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."sub_block_id" = $1[0m  [["sub_block_id", 5]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSubBlock Load (176.1ms)[0m  [1m[34mSELECT "sub_blocks".* FROM "sub_blocks" WHERE "sub_blocks"."block_id" = $1[0m  [["block_id", 6]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (176.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."block_id" = $1[0m  [["block_id", 6]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (176.0ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."block_id" = $1[0m  [["block_id", 6]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSubBlock Load (176.1ms)[0m  [1m[34mSELECT "sub_blocks".* FROM "sub_blocks" WHERE "sub_blocks"."block_id" = $1[0m  [["block_id", 7]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (176.0ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."block_id" = $1[0m  [["block_id", 7]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (176.3ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."block_id" = $1[0m  [["block_id", 7]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (176.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."sub_block_id" = $1[0m  [["sub_block_id", 6]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (176.3ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."sub_block_id" = $1[0m  [["sub_block_id", 6]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (176.0ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."sub_block_id" = $1[0m  [["sub_block_id", 7]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (176.4ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."sub_block_id" = $1[0m  [["sub_block_id", 7]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (178.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."sub_block_id" = $1[0m  [["sub_block_id", 8]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (176.8ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."sub_block_id" = $1[0m  [["sub_block_id", 8]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (180.4ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."sub_block_id" = $1[0m  [["sub_block_id", 9]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (176.8ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."sub_block_id" = $1[0m  [["sub_block_id", 9]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (11450.32ms)
+Completed 200 OK in 12558ms (Views: 338.0ms | ActiveRecord: 12214.4ms | Allocations: 136181)
+
+
+Started GET "/api/partners" for ::1 at 2024-05-03 16:40:31 +0500
+Processing by Api::PartnersController#index as HTML
+  [1m[36mPartner Load (354.2ms)[0m  [1m[34mSELECT "partners".* FROM "partners"[0m
+  ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mResidence Load (176.4ms)[0m  [1m[34mSELECT "residences".* FROM "residences" WHERE "residences"."partner_id" = $1[0m  [["partner_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mResidence Load (176.3ms)[0m  [1m[34mSELECT "residences".* FROM "residences" WHERE "residences"."partner_id" = $1[0m  [["partner_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBlock Load (176.6ms)[0m  [1m[34mSELECT "blocks".* FROM "blocks" WHERE "blocks"."residence_id" = $1[0m  [["residence_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (176.4ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."residence_id" = $1[0m  [["residence_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (178.0ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."residence_id" = $1[0m  [["residence_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBlock Load (176.5ms)[0m  [1m[34mSELECT "blocks".* FROM "blocks" WHERE "blocks"."residence_id" = $1[0m  [["residence_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (176.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."residence_id" = $1[0m  [["residence_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (176.6ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."residence_id" = $1[0m  [["residence_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSubBlock Load (176.9ms)[0m  [1m[34mSELECT "sub_blocks".* FROM "sub_blocks" WHERE "sub_blocks"."block_id" = $1[0m  [["block_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (176.0ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."block_id" = $1[0m  [["block_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (176.3ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."block_id" = $1[0m  [["block_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSubBlock Load (177.0ms)[0m  [1m[34mSELECT "sub_blocks".* FROM "sub_blocks" WHERE "sub_blocks"."block_id" = $1[0m  [["block_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (176.4ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."block_id" = $1[0m  [["block_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (178.7ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."block_id" = $1[0m  [["block_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSubBlock Load (176.6ms)[0m  [1m[34mSELECT "sub_blocks".* FROM "sub_blocks" WHERE "sub_blocks"."block_id" = $1[0m  [["block_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (176.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."block_id" = $1[0m  [["block_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (177.6ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."block_id" = $1[0m  [["block_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (176.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."sub_block_id" = $1[0m  [["sub_block_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (176.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."sub_block_id" = $1[0m  [["sub_block_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBlock Load (176.0ms)[0m  [1m[34mSELECT "blocks".* FROM "blocks" WHERE "blocks"."residence_id" = $1[0m  [["residence_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (177.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."residence_id" = $1[0m  [["residence_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (176.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."residence_id" = $1[0m  [["residence_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBlock Load (176.1ms)[0m  [1m[34mSELECT "blocks".* FROM "blocks" WHERE "blocks"."residence_id" = $1[0m  [["residence_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (176.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."residence_id" = $1[0m  [["residence_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (176.3ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."residence_id" = $1[0m  [["residence_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSubBlock Load (175.9ms)[0m  [1m[34mSELECT "sub_blocks".* FROM "sub_blocks" WHERE "sub_blocks"."block_id" = $1[0m  [["block_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (176.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."block_id" = $1[0m  [["block_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (176.9ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."block_id" = $1[0m  [["block_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSubBlock Load (176.0ms)[0m  [1m[34mSELECT "sub_blocks".* FROM "sub_blocks" WHERE "sub_blocks"."block_id" = $1[0m  [["block_id", 5]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (176.4ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."block_id" = $1[0m  [["block_id", 5]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (176.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."block_id" = $1[0m  [["block_id", 5]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (176.6ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."sub_block_id" = $1[0m  [["sub_block_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (179.5ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."sub_block_id" = $1[0m  [["sub_block_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (176.7ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."sub_block_id" = $1[0m  [["sub_block_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (177.0ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."sub_block_id" = $1[0m  [["sub_block_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (177.7ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."sub_block_id" = $1[0m  [["sub_block_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (176.9ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."sub_block_id" = $1[0m  [["sub_block_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (176.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."sub_block_id" = $1[0m  [["sub_block_id", 5]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (176.3ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."sub_block_id" = $1[0m  [["sub_block_id", 5]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSubBlock Load (176.5ms)[0m  [1m[34mSELECT "sub_blocks".* FROM "sub_blocks" WHERE "sub_blocks"."block_id" = $1[0m  [["block_id", 6]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (176.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."block_id" = $1[0m  [["block_id", 6]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (176.9ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."block_id" = $1[0m  [["block_id", 6]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSubBlock Load (176.9ms)[0m  [1m[34mSELECT "sub_blocks".* FROM "sub_blocks" WHERE "sub_blocks"."block_id" = $1[0m  [["block_id", 7]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (176.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."block_id" = $1[0m  [["block_id", 7]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (176.3ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."block_id" = $1[0m  [["block_id", 7]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (176.5ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."sub_block_id" = $1[0m  [["sub_block_id", 6]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (176.4ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."sub_block_id" = $1[0m  [["sub_block_id", 6]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (180.9ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."sub_block_id" = $1[0m  [["sub_block_id", 7]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (176.8ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."sub_block_id" = $1[0m  [["sub_block_id", 7]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (176.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."sub_block_id" = $1[0m  [["sub_block_id", 8]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (177.5ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."sub_block_id" = $1[0m  [["sub_block_id", 8]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (178.0ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."sub_block_id" = $1[0m  [["sub_block_id", 9]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (176.7ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."sub_block_id" = $1[0m  [["sub_block_id", 9]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (11459.83ms)
+Completed 200 OK in 12420ms (Views: 381.2ms | ActiveRecord: 12032.9ms | Allocations: 135660)
+
+
+Started GET "/api/partners" for ::1 at 2024-05-03 16:43:37 +0500
+Processing by Api::PartnersController#index as HTML
+  [1m[36mPartner Load (363.8ms)[0m  [1m[34mSELECT "partners".* FROM "partners"[0m
+  ↳ app/controllers/api/partners_controller.rb:5:in `index'
+Completed 500 Internal Server Error in 931ms (ActiveRecord: 902.3ms | Allocations: 16125)
+
+
+  
+NameError (uninitialized constant PartnerSerializer::ResidenceNameSerializer
+
+  has_many :residences, serializer: ResidenceNameSerializer
+                                    ^^^^^^^^^^^^^^^^^^^^^^^):
+  
+app/serializers/partner_serializer.rb:44:in `<class:PartnerSerializer>'
+app/serializers/partner_serializer.rb:36:in `<main>'
+app/controllers/api/partners_controller.rb:5:in `index'
+Started GET "/api/partners" for ::1 at 2024-05-03 16:44:09 +0500
+Processing by Api::PartnersController#index as HTML
+  [1m[36mPartner Load (357.0ms)[0m  [1m[34mSELECT "partners".* FROM "partners"[0m
+  ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mResidence Load (176.3ms)[0m  [1m[34mSELECT "residences".* FROM "residences" WHERE "residences"."partner_id" = $1[0m  [["partner_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mResidence Load (176.3ms)[0m  [1m[34mSELECT "residences".* FROM "residences" WHERE "residences"."partner_id" = $1[0m  [["partner_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBlock Load (177.1ms)[0m  [1m[34mSELECT "blocks".* FROM "blocks" WHERE "blocks"."residence_id" = $1[0m  [["residence_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (176.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."residence_id" = $1[0m  [["residence_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (176.2ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."residence_id" = $1[0m  [["residence_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBlock Load (176.1ms)[0m  [1m[34mSELECT "blocks".* FROM "blocks" WHERE "blocks"."residence_id" = $1[0m  [["residence_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (175.9ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."residence_id" = $1[0m  [["residence_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (177.7ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."residence_id" = $1[0m  [["residence_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSubBlock Load (176.6ms)[0m  [1m[34mSELECT "sub_blocks".* FROM "sub_blocks" WHERE "sub_blocks"."block_id" = $1[0m  [["block_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (178.0ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."block_id" = $1[0m  [["block_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (179.8ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."block_id" = $1[0m  [["block_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSubBlock Load (179.9ms)[0m  [1m[34mSELECT "sub_blocks".* FROM "sub_blocks" WHERE "sub_blocks"."block_id" = $1[0m  [["block_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (176.7ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."block_id" = $1[0m  [["block_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (176.9ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."block_id" = $1[0m  [["block_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSubBlock Load (181.2ms)[0m  [1m[34mSELECT "sub_blocks".* FROM "sub_blocks" WHERE "sub_blocks"."block_id" = $1[0m  [["block_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (192.7ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."block_id" = $1[0m  [["block_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (176.9ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."block_id" = $1[0m  [["block_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (177.0ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."sub_block_id" = $1[0m  [["sub_block_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (176.2ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."sub_block_id" = $1[0m  [["sub_block_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBlock Load (176.4ms)[0m  [1m[34mSELECT "blocks".* FROM "blocks" WHERE "blocks"."residence_id" = $1[0m  [["residence_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (176.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."residence_id" = $1[0m  [["residence_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (176.4ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."residence_id" = $1[0m  [["residence_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBlock Load (176.4ms)[0m  [1m[34mSELECT "blocks".* FROM "blocks" WHERE "blocks"."residence_id" = $1[0m  [["residence_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (176.0ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."residence_id" = $1[0m  [["residence_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (176.4ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."residence_id" = $1[0m  [["residence_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSubBlock Load (177.4ms)[0m  [1m[34mSELECT "sub_blocks".* FROM "sub_blocks" WHERE "sub_blocks"."block_id" = $1[0m  [["block_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (176.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."block_id" = $1[0m  [["block_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (176.2ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."block_id" = $1[0m  [["block_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSubBlock Load (176.2ms)[0m  [1m[34mSELECT "sub_blocks".* FROM "sub_blocks" WHERE "sub_blocks"."block_id" = $1[0m  [["block_id", 5]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (176.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."block_id" = $1[0m  [["block_id", 5]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (177.7ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."block_id" = $1[0m  [["block_id", 5]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (176.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."sub_block_id" = $1[0m  [["sub_block_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (176.8ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."sub_block_id" = $1[0m  [["sub_block_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (176.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."sub_block_id" = $1[0m  [["sub_block_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (176.2ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."sub_block_id" = $1[0m  [["sub_block_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (176.4ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."sub_block_id" = $1[0m  [["sub_block_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (176.2ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."sub_block_id" = $1[0m  [["sub_block_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (177.0ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."sub_block_id" = $1[0m  [["sub_block_id", 5]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (176.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."sub_block_id" = $1[0m  [["sub_block_id", 5]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSubBlock Load (176.3ms)[0m  [1m[34mSELECT "sub_blocks".* FROM "sub_blocks" WHERE "sub_blocks"."block_id" = $1[0m  [["block_id", 6]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (176.0ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."block_id" = $1[0m  [["block_id", 6]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (176.4ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."block_id" = $1[0m  [["block_id", 6]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSubBlock Load (176.4ms)[0m  [1m[34mSELECT "sub_blocks".* FROM "sub_blocks" WHERE "sub_blocks"."block_id" = $1[0m  [["block_id", 7]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (177.0ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."block_id" = $1[0m  [["block_id", 7]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (177.7ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."block_id" = $1[0m  [["block_id", 7]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (176.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."sub_block_id" = $1[0m  [["sub_block_id", 6]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (176.5ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."sub_block_id" = $1[0m  [["sub_block_id", 6]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (176.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."sub_block_id" = $1[0m  [["sub_block_id", 7]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (176.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."sub_block_id" = $1[0m  [["sub_block_id", 7]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (177.8ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."sub_block_id" = $1[0m  [["sub_block_id", 8]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (176.2ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."sub_block_id" = $1[0m  [["sub_block_id", 8]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (176.6ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."sub_block_id" = $1[0m  [["sub_block_id", 9]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (178.3ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."sub_block_id" = $1[0m  [["sub_block_id", 9]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (11469.58ms)
+Completed 200 OK in 12409ms (Views: 345.0ms | ActiveRecord: 12060.9ms | Allocations: 134465)
+
+
+Started GET "/api/partners" for ::1 at 2024-05-03 16:44:54 +0500
+Processing by Api::PartnersController#index as HTML
+  [1m[36mPartner Load (354.8ms)[0m  [1m[34mSELECT "partners".* FROM "partners"[0m
+  ↳ app/controllers/api/partners_controller.rb:5:in `index'
+Completed 500 Internal Server Error in 1019ms (ActiveRecord: 888.9ms | Allocations: 16153)
+
+
+  
+NameError (uninitialized constant PartnerSerializer::ResidenceNameSerializer
+
+  has_many :residences, serializer: ResidenceNameSerializer
+                                    ^^^^^^^^^^^^^^^^^^^^^^^):
+  
+app/serializers/partner_serializer.rb:44:in `<class:PartnerSerializer>'
+app/serializers/partner_serializer.rb:36:in `<main>'
+app/controllers/api/partners_controller.rb:5:in `index'
+Started GET "/api/partners" for ::1 at 2024-05-03 16:47:25 +0500
+Processing by Api::PartnersController#index as HTML
+  [1m[36mPartner Load (353.6ms)[0m  [1m[34mSELECT "partners".* FROM "partners"[0m
+  ↳ app/controllers/api/partners_controller.rb:5:in `index'
+Completed 500 Internal Server Error in 927ms (ActiveRecord: 888.4ms | Allocations: 16134)
+
+
+  
+NameError (uninitialized constant PartnerSerializer::ResidenceNameSerializer
+
+  has_many :residences, serializer: ResidenceNameSerializer
+                                    ^^^^^^^^^^^^^^^^^^^^^^^):
+  
+app/serializers/partner_serializer.rb:44:in `<class:PartnerSerializer>'
+app/serializers/partner_serializer.rb:36:in `<main>'
+app/controllers/api/partners_controller.rb:5:in `index'
+Started GET "/api/partners" for ::1 at 2024-05-03 16:47:35 +0500
+Processing by Api::PartnersController#index as HTML
+  [1m[36mPartner Load (354.1ms)[0m  [1m[34mSELECT "partners".* FROM "partners"[0m
+  ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mResidence Load (176.3ms)[0m  [1m[34mSELECT "residences".* FROM "residences" WHERE "residences"."partner_id" = $1[0m  [["partner_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mResidence Load (181.2ms)[0m  [1m[34mSELECT "residences".* FROM "residences" WHERE "residences"."partner_id" = $1[0m  [["partner_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBlock Load (176.1ms)[0m  [1m[34mSELECT "blocks".* FROM "blocks" WHERE "blocks"."residence_id" = $1[0m  [["residence_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (176.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."residence_id" = $1[0m  [["residence_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (176.8ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."residence_id" = $1[0m  [["residence_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBlock Load (180.5ms)[0m  [1m[34mSELECT "blocks".* FROM "blocks" WHERE "blocks"."residence_id" = $1[0m  [["residence_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (187.5ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."residence_id" = $1[0m  [["residence_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (176.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."residence_id" = $1[0m  [["residence_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSubBlock Load (176.0ms)[0m  [1m[34mSELECT "sub_blocks".* FROM "sub_blocks" WHERE "sub_blocks"."block_id" = $1[0m  [["block_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (182.6ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."block_id" = $1[0m  [["block_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (176.9ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."block_id" = $1[0m  [["block_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSubBlock Load (191.9ms)[0m  [1m[34mSELECT "sub_blocks".* FROM "sub_blocks" WHERE "sub_blocks"."block_id" = $1[0m  [["block_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (176.9ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."block_id" = $1[0m  [["block_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (176.0ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."block_id" = $1[0m  [["block_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSubBlock Load (177.1ms)[0m  [1m[34mSELECT "sub_blocks".* FROM "sub_blocks" WHERE "sub_blocks"."block_id" = $1[0m  [["block_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (177.8ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."block_id" = $1[0m  [["block_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (176.2ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."block_id" = $1[0m  [["block_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (176.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."sub_block_id" = $1[0m  [["sub_block_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (176.9ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."sub_block_id" = $1[0m  [["sub_block_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBlock Load (176.3ms)[0m  [1m[34mSELECT "blocks".* FROM "blocks" WHERE "blocks"."residence_id" = $1[0m  [["residence_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (176.9ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."residence_id" = $1[0m  [["residence_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (176.3ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."residence_id" = $1[0m  [["residence_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBlock Load (176.0ms)[0m  [1m[34mSELECT "blocks".* FROM "blocks" WHERE "blocks"."residence_id" = $1[0m  [["residence_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (176.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."residence_id" = $1[0m  [["residence_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (176.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."residence_id" = $1[0m  [["residence_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSubBlock Load (176.3ms)[0m  [1m[34mSELECT "sub_blocks".* FROM "sub_blocks" WHERE "sub_blocks"."block_id" = $1[0m  [["block_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (176.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."block_id" = $1[0m  [["block_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (176.3ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."block_id" = $1[0m  [["block_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSubBlock Load (176.5ms)[0m  [1m[34mSELECT "sub_blocks".* FROM "sub_blocks" WHERE "sub_blocks"."block_id" = $1[0m  [["block_id", 5]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (176.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."block_id" = $1[0m  [["block_id", 5]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (176.9ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."block_id" = $1[0m  [["block_id", 5]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (176.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."sub_block_id" = $1[0m  [["sub_block_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (176.2ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."sub_block_id" = $1[0m  [["sub_block_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (176.0ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."sub_block_id" = $1[0m  [["sub_block_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (200.4ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."sub_block_id" = $1[0m  [["sub_block_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (176.7ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."sub_block_id" = $1[0m  [["sub_block_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (175.9ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."sub_block_id" = $1[0m  [["sub_block_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (176.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."sub_block_id" = $1[0m  [["sub_block_id", 5]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (176.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."sub_block_id" = $1[0m  [["sub_block_id", 5]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSubBlock Load (177.8ms)[0m  [1m[34mSELECT "sub_blocks".* FROM "sub_blocks" WHERE "sub_blocks"."block_id" = $1[0m  [["block_id", 6]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (176.0ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."block_id" = $1[0m  [["block_id", 6]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (176.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."block_id" = $1[0m  [["block_id", 6]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSubBlock Load (176.4ms)[0m  [1m[34mSELECT "sub_blocks".* FROM "sub_blocks" WHERE "sub_blocks"."block_id" = $1[0m  [["block_id", 7]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (176.4ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."block_id" = $1[0m  [["block_id", 7]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (176.4ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."block_id" = $1[0m  [["block_id", 7]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (176.8ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."sub_block_id" = $1[0m  [["sub_block_id", 6]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (176.3ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."sub_block_id" = $1[0m  [["sub_block_id", 6]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (176.0ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."sub_block_id" = $1[0m  [["sub_block_id", 7]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (176.3ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."sub_block_id" = $1[0m  [["sub_block_id", 7]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (175.9ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."sub_block_id" = $1[0m  [["sub_block_id", 8]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (176.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."sub_block_id" = $1[0m  [["sub_block_id", 8]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (228.8ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."sub_block_id" = $1[0m  [["sub_block_id", 9]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (180.5ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."sub_block_id" = $1[0m  [["sub_block_id", 9]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (11606.35ms)
+Completed 200 OK in 12579ms (Views: 401.8ms | ActiveRecord: 12172.3ms | Allocations: 137441)
+
+
+Started GET "/api/partners" for ::1 at 2024-05-03 16:50:29 +0500
+Processing by Api::PartnersController#index as HTML
+  [1m[36mPartner Load (355.4ms)[0m  [1m[34mSELECT "partners".* FROM "partners"[0m
+  ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mResidence Load (176.1ms)[0m  [1m[34mSELECT "residences".* FROM "residences" WHERE "residences"."partner_id" = $1[0m  [["partner_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mResidence Load (181.9ms)[0m  [1m[34mSELECT "residences".* FROM "residences" WHERE "residences"."partner_id" = $1[0m  [["partner_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBlock Load (177.3ms)[0m  [1m[34mSELECT "blocks".* FROM "blocks" WHERE "blocks"."residence_id" = $1[0m  [["residence_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (181.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."residence_id" = $1[0m  [["residence_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (178.8ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."residence_id" = $1[0m  [["residence_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBlock Load (176.3ms)[0m  [1m[34mSELECT "blocks".* FROM "blocks" WHERE "blocks"."residence_id" = $1[0m  [["residence_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (177.0ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."residence_id" = $1[0m  [["residence_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (178.3ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."residence_id" = $1[0m  [["residence_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSubBlock Load (179.5ms)[0m  [1m[34mSELECT "sub_blocks".* FROM "sub_blocks" WHERE "sub_blocks"."block_id" = $1[0m  [["block_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (182.8ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."block_id" = $1[0m  [["block_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (178.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."block_id" = $1[0m  [["block_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSubBlock Load (177.6ms)[0m  [1m[34mSELECT "sub_blocks".* FROM "sub_blocks" WHERE "sub_blocks"."block_id" = $1[0m  [["block_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (178.4ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."block_id" = $1[0m  [["block_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (180.7ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."block_id" = $1[0m  [["block_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSubBlock Load (177.0ms)[0m  [1m[34mSELECT "sub_blocks".* FROM "sub_blocks" WHERE "sub_blocks"."block_id" = $1[0m  [["block_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (181.6ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."block_id" = $1[0m  [["block_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (179.2ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."block_id" = $1[0m  [["block_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (178.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."sub_block_id" = $1[0m  [["sub_block_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (182.7ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."sub_block_id" = $1[0m  [["sub_block_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBlock Load (178.2ms)[0m  [1m[34mSELECT "blocks".* FROM "blocks" WHERE "blocks"."residence_id" = $1[0m  [["residence_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (218.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."residence_id" = $1[0m  [["residence_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (179.5ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."residence_id" = $1[0m  [["residence_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBlock Load (177.0ms)[0m  [1m[34mSELECT "blocks".* FROM "blocks" WHERE "blocks"."residence_id" = $1[0m  [["residence_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (177.9ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."residence_id" = $1[0m  [["residence_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (176.3ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."residence_id" = $1[0m  [["residence_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSubBlock Load (176.9ms)[0m  [1m[34mSELECT "sub_blocks".* FROM "sub_blocks" WHERE "sub_blocks"."block_id" = $1[0m  [["block_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (380.5ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."block_id" = $1[0m  [["block_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (177.7ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."block_id" = $1[0m  [["block_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSubBlock Load (177.5ms)[0m  [1m[34mSELECT "sub_blocks".* FROM "sub_blocks" WHERE "sub_blocks"."block_id" = $1[0m  [["block_id", 5]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (179.5ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."block_id" = $1[0m  [["block_id", 5]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (183.3ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."block_id" = $1[0m  [["block_id", 5]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (179.0ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."sub_block_id" = $1[0m  [["sub_block_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (176.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."sub_block_id" = $1[0m  [["sub_block_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (186.6ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."sub_block_id" = $1[0m  [["sub_block_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (176.6ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."sub_block_id" = $1[0m  [["sub_block_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (179.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."sub_block_id" = $1[0m  [["sub_block_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (176.2ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."sub_block_id" = $1[0m  [["sub_block_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (177.0ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."sub_block_id" = $1[0m  [["sub_block_id", 5]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (176.8ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."sub_block_id" = $1[0m  [["sub_block_id", 5]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSubBlock Load (175.4ms)[0m  [1m[34mSELECT "sub_blocks".* FROM "sub_blocks" WHERE "sub_blocks"."block_id" = $1[0m  [["block_id", 6]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (177.0ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."block_id" = $1[0m  [["block_id", 6]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (176.9ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."block_id" = $1[0m  [["block_id", 6]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSubBlock Load (178.1ms)[0m  [1m[34mSELECT "sub_blocks".* FROM "sub_blocks" WHERE "sub_blocks"."block_id" = $1[0m  [["block_id", 7]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (176.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."block_id" = $1[0m  [["block_id", 7]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (176.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."block_id" = $1[0m  [["block_id", 7]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (177.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."sub_block_id" = $1[0m  [["sub_block_id", 6]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (176.6ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."sub_block_id" = $1[0m  [["sub_block_id", 6]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (176.7ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."sub_block_id" = $1[0m  [["sub_block_id", 7]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (177.2ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."sub_block_id" = $1[0m  [["sub_block_id", 7]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (176.6ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."sub_block_id" = $1[0m  [["sub_block_id", 8]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (179.0ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."sub_block_id" = $1[0m  [["sub_block_id", 8]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (176.4ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."sub_block_id" = $1[0m  [["sub_block_id", 9]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (176.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."sub_block_id" = $1[0m  [["sub_block_id", 9]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (11831.62ms)
+Completed 200 OK in 12761ms (Views: 321.2ms | ActiveRecord: 12436.0ms | Allocations: 137837)
+
+
+Started GET "/api/partners" for ::1 at 2024-05-03 16:52:41 +0500
+  [1m[36mActiveRecord::SchemaMigration Load (172.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::PartnersController#index as HTML
+  [1m[36mPartner Load (342.4ms)[0m  [1m[34mSELECT "partners".* FROM "partners"[0m
+  ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mResidence Load (169.5ms)[0m  [1m[34mSELECT "residences".* FROM "residences" WHERE "residences"."partner_id" = $1[0m  [["partner_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mResidence Load (169.6ms)[0m  [1m[34mSELECT "residences".* FROM "residences" WHERE "residences"."partner_id" = $1[0m  [["partner_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBlock Load (170.1ms)[0m  [1m[34mSELECT "blocks".* FROM "blocks" WHERE "blocks"."residence_id" = $1[0m  [["residence_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (169.4ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."residence_id" = $1[0m  [["residence_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (169.8ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."residence_id" = $1[0m  [["residence_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBlock Load (169.0ms)[0m  [1m[34mSELECT "blocks".* FROM "blocks" WHERE "blocks"."residence_id" = $1[0m  [["residence_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (169.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."residence_id" = $1[0m  [["residence_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (168.9ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."residence_id" = $1[0m  [["residence_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSubBlock Load (169.3ms)[0m  [1m[34mSELECT "sub_blocks".* FROM "sub_blocks" WHERE "sub_blocks"."block_id" = $1[0m  [["block_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (169.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."block_id" = $1[0m  [["block_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (171.2ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."block_id" = $1[0m  [["block_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSubBlock Load (169.1ms)[0m  [1m[34mSELECT "sub_blocks".* FROM "sub_blocks" WHERE "sub_blocks"."block_id" = $1[0m  [["block_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (169.5ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."block_id" = $1[0m  [["block_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (168.9ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."block_id" = $1[0m  [["block_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSubBlock Load (169.0ms)[0m  [1m[34mSELECT "sub_blocks".* FROM "sub_blocks" WHERE "sub_blocks"."block_id" = $1[0m  [["block_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (168.9ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."block_id" = $1[0m  [["block_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (195.4ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."block_id" = $1[0m  [["block_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (178.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."sub_block_id" = $1[0m  [["sub_block_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (169.7ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."sub_block_id" = $1[0m  [["sub_block_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBlock Load (169.4ms)[0m  [1m[34mSELECT "blocks".* FROM "blocks" WHERE "blocks"."residence_id" = $1[0m  [["residence_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (169.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."residence_id" = $1[0m  [["residence_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (168.9ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."residence_id" = $1[0m  [["residence_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBlock Load (169.1ms)[0m  [1m[34mSELECT "blocks".* FROM "blocks" WHERE "blocks"."residence_id" = $1[0m  [["residence_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (168.9ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."residence_id" = $1[0m  [["residence_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (169.2ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."residence_id" = $1[0m  [["residence_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSubBlock Load (169.0ms)[0m  [1m[34mSELECT "sub_blocks".* FROM "sub_blocks" WHERE "sub_blocks"."block_id" = $1[0m  [["block_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (170.0ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."block_id" = $1[0m  [["block_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (169.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."block_id" = $1[0m  [["block_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSubBlock Load (169.4ms)[0m  [1m[34mSELECT "sub_blocks".* FROM "sub_blocks" WHERE "sub_blocks"."block_id" = $1[0m  [["block_id", 5]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (168.4ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."block_id" = $1[0m  [["block_id", 5]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (169.2ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."block_id" = $1[0m  [["block_id", 5]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (168.8ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."sub_block_id" = $1[0m  [["sub_block_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (169.3ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."sub_block_id" = $1[0m  [["sub_block_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (169.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."sub_block_id" = $1[0m  [["sub_block_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (169.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."sub_block_id" = $1[0m  [["sub_block_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (169.4ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."sub_block_id" = $1[0m  [["sub_block_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (168.9ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."sub_block_id" = $1[0m  [["sub_block_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (169.0ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."sub_block_id" = $1[0m  [["sub_block_id", 5]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (169.6ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."sub_block_id" = $1[0m  [["sub_block_id", 5]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSubBlock Load (168.8ms)[0m  [1m[34mSELECT "sub_blocks".* FROM "sub_blocks" WHERE "sub_blocks"."block_id" = $1[0m  [["block_id", 6]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (170.0ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."block_id" = $1[0m  [["block_id", 6]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (169.0ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."block_id" = $1[0m  [["block_id", 6]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSubBlock Load (170.3ms)[0m  [1m[34mSELECT "sub_blocks".* FROM "sub_blocks" WHERE "sub_blocks"."block_id" = $1[0m  [["block_id", 7]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (168.8ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."block_id" = $1[0m  [["block_id", 7]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (168.8ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."block_id" = $1[0m  [["block_id", 7]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (168.9ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."sub_block_id" = $1[0m  [["sub_block_id", 6]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (168.8ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."sub_block_id" = $1[0m  [["sub_block_id", 6]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (168.8ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."sub_block_id" = $1[0m  [["sub_block_id", 7]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (168.7ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."sub_block_id" = $1[0m  [["sub_block_id", 7]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (174.8ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."sub_block_id" = $1[0m  [["sub_block_id", 8]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (169.4ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."sub_block_id" = $1[0m  [["sub_block_id", 8]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (169.0ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."sub_block_id" = $1[0m  [["sub_block_id", 9]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (168.7ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."sub_block_id" = $1[0m  [["sub_block_id", 9]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (12790.81ms)
+Completed 200 OK in 16534ms (Views: 3208.7ms | ActiveRecord: 13301.9ms | Allocations: 204421)
+
+
+Started GET "/" for ::1 at 2024-05-03 23:41:10 +0500
+  [1m[36mActiveRecord::SchemaMigration Load (171.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Admin::DashboardController#index as */*
+Completed 401 Unauthorized in 62ms (ActiveRecord: 0.0ms | Allocations: 1498)
+
+
+Started GET "/vitapackcz.myshopify.com/analytics" for ::1 at 2024-05-03 23:41:15 +0500
+Processing by Admin::DashboardController#index as HTML
+  Parameters: {"path"=>"vitapackcz.myshopify.com/analytics"}
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms | Allocations: 288)
+
+
+Started GET "/admin/login" for ::1 at 2024-05-03 23:41:15 +0500
+Processing by ActiveAdmin::Devise::SessionsController#new as HTML
+  Rendering layout /Users/apple/.rvm/gems/ruby-3.1.2/gems/activeadmin-3.2.0/app/views/layouts/active_admin_logged_out.html.erb
+  Rendering /Users/apple/.rvm/gems/ruby-3.1.2/gems/activeadmin-3.2.0/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out
+  Rendered /Users/apple/.rvm/gems/ruby-3.1.2/gems/activeadmin-3.2.0/app/views/active_admin/devise/shared/_links.erb (Duration: 2.5ms | Allocations: 525)
+  Rendered /Users/apple/.rvm/gems/ruby-3.1.2/gems/activeadmin-3.2.0/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out (Duration: 140.7ms | Allocations: 10423)
+  Rendered layout /Users/apple/.rvm/gems/ruby-3.1.2/gems/activeadmin-3.2.0/app/views/layouts/active_admin_logged_out.html.erb (Duration: 695.0ms | Allocations: 60326)
+Completed 200 OK in 4708ms (Views: 744.6ms | ActiveRecord: 2280.7ms | Allocations: 87952)
+
+
+Started GET "/api/partners" for ::1 at 2024-05-04 13:51:22 +0500
+  [1m[36mActiveRecord::SchemaMigration Load (187.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::PartnersController#index as HTML
+  [1m[36mPartner Load (348.8ms)[0m  [1m[34mSELECT "partners".* FROM "partners"[0m
+  ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mResidence Load (174.4ms)[0m  [1m[34mSELECT "residences".* FROM "residences" WHERE "residences"."partner_id" = $1[0m  [["partner_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mResidence Load (174.2ms)[0m  [1m[34mSELECT "residences".* FROM "residences" WHERE "residences"."partner_id" = $1[0m  [["partner_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBlock Load (174.2ms)[0m  [1m[34mSELECT "blocks".* FROM "blocks" WHERE "blocks"."residence_id" = $1[0m  [["residence_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (176.0ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."residence_id" = $1[0m  [["residence_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (174.6ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."residence_id" = $1[0m  [["residence_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBlock Load (174.9ms)[0m  [1m[34mSELECT "blocks".* FROM "blocks" WHERE "blocks"."residence_id" = $1[0m  [["residence_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (176.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."residence_id" = $1[0m  [["residence_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (173.9ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."residence_id" = $1[0m  [["residence_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSubBlock Load (174.4ms)[0m  [1m[34mSELECT "sub_blocks".* FROM "sub_blocks" WHERE "sub_blocks"."block_id" = $1[0m  [["block_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (174.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."block_id" = $1[0m  [["block_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (174.6ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."block_id" = $1[0m  [["block_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSubBlock Load (174.8ms)[0m  [1m[34mSELECT "sub_blocks".* FROM "sub_blocks" WHERE "sub_blocks"."block_id" = $1[0m  [["block_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (173.8ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."block_id" = $1[0m  [["block_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (174.0ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."block_id" = $1[0m  [["block_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSubBlock Load (175.9ms)[0m  [1m[34mSELECT "sub_blocks".* FROM "sub_blocks" WHERE "sub_blocks"."block_id" = $1[0m  [["block_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (173.8ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."block_id" = $1[0m  [["block_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (174.6ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."block_id" = $1[0m  [["block_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (175.0ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."sub_block_id" = $1[0m  [["sub_block_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (174.2ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."sub_block_id" = $1[0m  [["sub_block_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBlock Load (174.9ms)[0m  [1m[34mSELECT "blocks".* FROM "blocks" WHERE "blocks"."residence_id" = $1[0m  [["residence_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (173.9ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."residence_id" = $1[0m  [["residence_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (174.2ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."residence_id" = $1[0m  [["residence_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBlock Load (174.1ms)[0m  [1m[34mSELECT "blocks".* FROM "blocks" WHERE "blocks"."residence_id" = $1[0m  [["residence_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (174.4ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."residence_id" = $1[0m  [["residence_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (174.6ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."residence_id" = $1[0m  [["residence_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSubBlock Load (174.4ms)[0m  [1m[34mSELECT "sub_blocks".* FROM "sub_blocks" WHERE "sub_blocks"."block_id" = $1[0m  [["block_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (173.8ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."block_id" = $1[0m  [["block_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (174.0ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."block_id" = $1[0m  [["block_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSubBlock Load (174.1ms)[0m  [1m[34mSELECT "sub_blocks".* FROM "sub_blocks" WHERE "sub_blocks"."block_id" = $1[0m  [["block_id", 5]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (174.5ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."block_id" = $1[0m  [["block_id", 5]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (173.9ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."block_id" = $1[0m  [["block_id", 5]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (173.8ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."sub_block_id" = $1[0m  [["sub_block_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (174.7ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."sub_block_id" = $1[0m  [["sub_block_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (174.4ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."sub_block_id" = $1[0m  [["sub_block_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (173.9ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."sub_block_id" = $1[0m  [["sub_block_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (174.9ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."sub_block_id" = $1[0m  [["sub_block_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (173.7ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."sub_block_id" = $1[0m  [["sub_block_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (174.0ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."sub_block_id" = $1[0m  [["sub_block_id", 5]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (173.9ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."sub_block_id" = $1[0m  [["sub_block_id", 5]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSubBlock Load (174.0ms)[0m  [1m[34mSELECT "sub_blocks".* FROM "sub_blocks" WHERE "sub_blocks"."block_id" = $1[0m  [["block_id", 6]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (176.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."block_id" = $1[0m  [["block_id", 6]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (174.0ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."block_id" = $1[0m  [["block_id", 6]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSubBlock Load (174.8ms)[0m  [1m[34mSELECT "sub_blocks".* FROM "sub_blocks" WHERE "sub_blocks"."block_id" = $1[0m  [["block_id", 7]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (174.6ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."block_id" = $1[0m  [["block_id", 7]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (174.2ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."block_id" = $1[0m  [["block_id", 7]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (175.0ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."sub_block_id" = $1[0m  [["sub_block_id", 6]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (174.0ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."sub_block_id" = $1[0m  [["sub_block_id", 6]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (174.0ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."sub_block_id" = $1[0m  [["sub_block_id", 7]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (175.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."sub_block_id" = $1[0m  [["sub_block_id", 7]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (177.0ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."sub_block_id" = $1[0m  [["sub_block_id", 8]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (174.2ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."sub_block_id" = $1[0m  [["sub_block_id", 8]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (174.5ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."sub_block_id" = $1[0m  [["sub_block_id", 9]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (174.0ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."sub_block_id" = $1[0m  [["sub_block_id", 9]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (13242.03ms)
+Completed 200 OK in 17138ms (Views: 3455.0ms | ActiveRecord: 13664.4ms | Allocations: 204400)
+
+
+Started GET "/api/partners" for ::1 at 2024-05-04 13:51:44 +0500
+Processing by Api::PartnersController#index as HTML
+  [1m[36mPartner Load (349.4ms)[0m  [1m[34mSELECT "partners".* FROM "partners"[0m
+  ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mResidence Load (174.6ms)[0m  [1m[34mSELECT "residences".* FROM "residences" WHERE "residences"."partner_id" = $1[0m  [["partner_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mResidence Load (174.0ms)[0m  [1m[34mSELECT "residences".* FROM "residences" WHERE "residences"."partner_id" = $1[0m  [["partner_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBlock Load (174.0ms)[0m  [1m[34mSELECT "blocks".* FROM "blocks" WHERE "blocks"."residence_id" = $1[0m  [["residence_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (174.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."residence_id" = $1[0m  [["residence_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (174.0ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."residence_id" = $1[0m  [["residence_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBlock Load (173.9ms)[0m  [1m[34mSELECT "blocks".* FROM "blocks" WHERE "blocks"."residence_id" = $1[0m  [["residence_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (174.8ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."residence_id" = $1[0m  [["residence_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (174.4ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."residence_id" = $1[0m  [["residence_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSubBlock Load (173.8ms)[0m  [1m[34mSELECT "sub_blocks".* FROM "sub_blocks" WHERE "sub_blocks"."block_id" = $1[0m  [["block_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (173.9ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."block_id" = $1[0m  [["block_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (174.0ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."block_id" = $1[0m  [["block_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSubBlock Load (173.6ms)[0m  [1m[34mSELECT "sub_blocks".* FROM "sub_blocks" WHERE "sub_blocks"."block_id" = $1[0m  [["block_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (174.8ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."block_id" = $1[0m  [["block_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (174.4ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."block_id" = $1[0m  [["block_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSubBlock Load (174.7ms)[0m  [1m[34mSELECT "sub_blocks".* FROM "sub_blocks" WHERE "sub_blocks"."block_id" = $1[0m  [["block_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (173.7ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."block_id" = $1[0m  [["block_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (174.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."block_id" = $1[0m  [["block_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (173.8ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."sub_block_id" = $1[0m  [["sub_block_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (173.8ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."sub_block_id" = $1[0m  [["sub_block_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBlock Load (173.9ms)[0m  [1m[34mSELECT "blocks".* FROM "blocks" WHERE "blocks"."residence_id" = $1[0m  [["residence_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (173.8ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."residence_id" = $1[0m  [["residence_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (174.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."residence_id" = $1[0m  [["residence_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mBlock Load (175.0ms)[0m  [1m[34mSELECT "blocks".* FROM "blocks" WHERE "blocks"."residence_id" = $1[0m  [["residence_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (173.9ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."residence_id" = $1[0m  [["residence_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (174.3ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."residence_id" = $1[0m  [["residence_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSubBlock Load (173.6ms)[0m  [1m[34mSELECT "sub_blocks".* FROM "sub_blocks" WHERE "sub_blocks"."block_id" = $1[0m  [["block_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (173.9ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."block_id" = $1[0m  [["block_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (174.0ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."block_id" = $1[0m  [["block_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSubBlock Load (173.9ms)[0m  [1m[34mSELECT "sub_blocks".* FROM "sub_blocks" WHERE "sub_blocks"."block_id" = $1[0m  [["block_id", 5]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (174.2ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."block_id" = $1[0m  [["block_id", 5]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (174.0ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."block_id" = $1[0m  [["block_id", 5]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (173.9ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."sub_block_id" = $1[0m  [["sub_block_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (175.1ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."sub_block_id" = $1[0m  [["sub_block_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (174.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."sub_block_id" = $1[0m  [["sub_block_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (173.8ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."sub_block_id" = $1[0m  [["sub_block_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (173.9ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."sub_block_id" = $1[0m  [["sub_block_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (174.0ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."sub_block_id" = $1[0m  [["sub_block_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (173.8ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."sub_block_id" = $1[0m  [["sub_block_id", 5]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (174.0ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."sub_block_id" = $1[0m  [["sub_block_id", 5]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSubBlock Load (174.1ms)[0m  [1m[34mSELECT "sub_blocks".* FROM "sub_blocks" WHERE "sub_blocks"."block_id" = $1[0m  [["block_id", 6]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (174.4ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."block_id" = $1[0m  [["block_id", 6]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (173.7ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."block_id" = $1[0m  [["block_id", 6]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mSubBlock Load (174.3ms)[0m  [1m[34mSELECT "sub_blocks".* FROM "sub_blocks" WHERE "sub_blocks"."block_id" = $1[0m  [["block_id", 7]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (174.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."block_id" = $1[0m  [["block_id", 7]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (174.3ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."block_id" = $1[0m  [["block_id", 7]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (173.6ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."sub_block_id" = $1[0m  [["sub_block_id", 6]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (174.5ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."sub_block_id" = $1[0m  [["sub_block_id", 6]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (174.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."sub_block_id" = $1[0m  [["sub_block_id", 7]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (174.2ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."sub_block_id" = $1[0m  [["sub_block_id", 7]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (173.9ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."sub_block_id" = $1[0m  [["sub_block_id", 8]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (173.9ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."sub_block_id" = $1[0m  [["sub_block_id", 8]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (174.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."sub_block_id" = $1[0m  [["sub_block_id", 9]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mAddress Load (173.9ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."sub_block_id" = $1[0m  [["sub_block_id", 9]]
+[active_model_serializers]   ↳ app/controllers/api/partners_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (9414.29ms)
+Completed 200 OK in 9769ms (Views: 192.5ms | ActiveRecord: 9575.1ms | Allocations: 75442)
+
+

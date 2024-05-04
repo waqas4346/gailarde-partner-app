@@ -34,59 +34,102 @@
 #  hub_spot_id                       :string           default("")
 #
 class PartnerSerializer < ActiveModel::Serializer
-  attributes :id
+  attributes :id, :name, :active
 
-  def attributes(*args)
-    hash = super
-    hash.merge(object.attributes.symbolize_keys)
-  end
+  # def attributes(*args)
+  #   hash = super
+  #   hash.merge(object.attributes.symbolize_keys)
+  # end
 
   has_many :residences
-end
 
-class ResidenceSerializer < ActiveModel::Serializer
-  attributes :id
-  def attributes(*args)
-    hash = super
-    hash.merge(object.attributes.symbolize_keys)
-  end
-  has_many :blocks
-  has_many :rooms
-  has_many :addresses
-end
+  class ResidenceSerializer < ActiveModel::Serializer
+    attributes :id, :name, :active
+    has_many :blocks
+    has_many :rooms
+    has_many :addresses
+    class RoomSerializer < ActiveModel::Serializer
+      attributes :id, :name
+    end
 
-class BlockSerializer < ActiveModel::Serializer
-  attributes :id
-  def attributes(*args)
-    hash = super
-    hash.merge(object.attributes.symbolize_keys)
-  end
-  has_many :sub_blocks
-  has_many :rooms
-  has_many :addresses
-end
+    class AddressSerializer < ActiveModel::Serializer
+      attributes :address1, :address2, :city, :zip, :countryCode
+    
+      def address1
+        object.address
+      end
+    
+      def address2
+        object.apartment
+      end
+    
+      def zip
+        object.postcode
+      end
+    
+      def countryCode
+        object.country
+      end
+    end
 
-class SubBlockSerializer < ActiveModel::Serializer
-  attributes :id
-  def attributes(*args)
-    hash = super
-    hash.merge(object.attributes.symbolize_keys)
-  end
-  has_many :rooms
-  has_many :addresses
-end
+    class BlockSerializer < ActiveModel::Serializer
+      attributes :id, :name, :active
+      has_many :sub_blocks
+      has_many :rooms
+      has_many :addresses
 
-class RoomSerializer < ActiveModel::Serializer
-  attributes :id
-  def attributes(*args)
-    hash = super
-    hash.merge(object.attributes.symbolize_keys)
-  end
-end
-class AddressSerializer < ActiveModel::Serializer
-  attributes :id
-  def attributes(*args)
-    hash = super
-    hash.merge(object.attributes.symbolize_keys)
+      class RoomSerializer < ActiveModel::Serializer
+        attributes :id, :name
+      end
+
+      class AddressSerializer < ActiveModel::Serializer
+        attributes :address1, :address2, :city, :zip, :countryCode
+      
+        def address1
+          object.address
+        end
+      
+        def address2
+          object.apartment
+        end
+      
+        def zip
+          object.postcode
+        end
+      
+        def countryCode
+          object.country
+        end
+      end
+
+      class SubBlockSerializer < ActiveModel::Serializer
+        attributes :id, :name, :active
+        has_many :rooms
+        has_many :addresses
+        class RoomSerializer < ActiveModel::Serializer
+          attributes :id, :name
+        end
+
+        class AddressSerializer < ActiveModel::Serializer
+          attributes :address1, :address2, :city, :zip, :countryCode
+        
+          def address1
+            object.address
+          end
+        
+          def address2
+            object.apartment
+          end
+        
+          def zip
+            object.postcode
+          end
+        
+          def countryCode
+            object.country
+          end
+        end
+      end
+    end
   end
 end
