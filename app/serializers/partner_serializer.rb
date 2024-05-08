@@ -37,7 +37,7 @@
 require 'iso_country_codes'
 
 class PartnerSerializer < ActiveModel::Serializer
-  attributes :id, :name, :active
+  attributes :id, :name, :active, :parameter
 
   # def attributes(*args)
   #   hash = super
@@ -47,7 +47,8 @@ class PartnerSerializer < ActiveModel::Serializer
   has_many :residences
 
   class ResidenceSerializer < ActiveModel::Serializer
-    attributes :id, :name, :active
+    attributes :id, :name, :active, :weekend_delivery, :pre_arrival_delivery, :what_word_first,
+               :what_word_second, :what_word_third
     has_many :blocks
     has_many :rooms
     has_many :addresses
