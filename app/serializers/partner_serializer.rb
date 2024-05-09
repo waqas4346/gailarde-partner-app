@@ -127,7 +127,7 @@ class PartnerSerializer < ActiveModel::Serializer
         end
 
         class AddressSerializer < ActiveModel::Serializer
-          attributes :address1, :address2, :city, :zip, :countryCode
+          attributes :address1, :address2, :city, :zip, :countryCode, :country
         
           def address1
             object.address
