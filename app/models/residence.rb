@@ -4,9 +4,13 @@
 #
 #  id                       :bigint           not null, primary key
 #  active                   :boolean          default(TRUE)
+#  address                  :string           default("")
+#  apartment                :string           default("")
+#  city                     :string           default("")
 #  contact_email            :string           default(""), not null
 #  contact_name             :string           default(""), not null
 #  contact_phone            :string           default(""), not null
+#  country                  :string           default("")
 #  delivery_general_info    :text             default("")
 #  delivery_into_room       :boolean          default(FALSE)
 #  delivery_pickup_location :string           default("")
@@ -14,7 +18,9 @@
 #  manned_reception         :boolean          default(FALSE)
 #  name                     :string           default(""), not null
 #  no_pallets               :boolean          default(FALSE)
+#  postcode                 :string           default("")
 #  pre_arrival_delivery     :integer
+#  residence_block          :string           default("")
 #  vehicle_size             :string           default("")
 #  weekend_delivery         :boolean          default(FALSE)
 #  what_word_first          :string           default("")
@@ -37,7 +43,6 @@ class Residence < ApplicationRecord
   belongs_to :partner
   has_many :blocks, dependent: :destroy
   has_many :rooms, dependent: :destroy
-  has_many :addresses, dependent: :destroy
 
 
 end

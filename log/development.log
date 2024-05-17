@@ -40970,3 +40970,134 @@ Completed 200 OK in 17026ms (Views: 3367.9ms | ActiveRecord: 13636.3ms | Allocat
 Completed 200 OK in 17269ms (Views: 4495.6ms | ActiveRecord: 12755.2ms | Allocations: 293369)
 
 
+Started GET "/" for ::1 at 2024-05-17 23:11:00 +0500
+  [1m[36mActiveRecord::SchemaMigration Load (5.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Admin::DashboardController#index as HTML
+Completed 401 Unauthorized in 13ms (ActiveRecord: 0.0ms | Allocations: 1498)
+
+
+Started GET "/admin/login" for ::1 at 2024-05-17 23:11:02 +0500
+Processing by ActiveAdmin::Devise::SessionsController#new as HTML
+  Rendering layout /Users/apple/.rvm/gems/ruby-3.1.2/gems/activeadmin-3.2.0/app/views/layouts/active_admin_logged_out.html.erb
+  Rendering /Users/apple/.rvm/gems/ruby-3.1.2/gems/activeadmin-3.2.0/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out
+  Rendered /Users/apple/.rvm/gems/ruby-3.1.2/gems/activeadmin-3.2.0/app/views/active_admin/devise/shared/_links.erb (Duration: 0.9ms | Allocations: 525)
+  Rendered /Users/apple/.rvm/gems/ruby-3.1.2/gems/activeadmin-3.2.0/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out (Duration: 43.9ms | Allocations: 10420)
+  Rendered layout /Users/apple/.rvm/gems/ruby-3.1.2/gems/activeadmin-3.2.0/app/views/layouts/active_admin_logged_out.html.erb (Duration: 373.4ms | Allocations: 60398)
+Completed 200 OK in 568ms (Views: 391.7ms | ActiveRecord: 49.2ms | Allocations: 87897)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (29.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (31.6ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[35m (214.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "gailarde_dashboard_development"[0m
+  [1m[35m (59.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS "gailarde_dashboard_test"[0m
+  [1m[35m (368.1ms)[0m  [1m[35mCREATE DATABASE "gailarde_dashboard_development" ENCODING = 'unicode'[0m
+  [1m[35m (102.3ms)[0m  [1m[35mCREATE DATABASE "gailarde_dashboard_test" ENCODING = 'unicode'[0m
+  [1m[35m (38.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (43.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2326345832472128565)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (33.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (5.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2024-05-17 20:05:23.479404', '2024-05-17 20:05:23.479409') RETURNING "key"[0m
+Migrating to CreatePartners (20240325093430)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (11.6ms)[0m  [1m[35mCREATE TABLE "partners" ("id" bigserial primary key, "name" character varying DEFAULT '' NOT NULL, "parameter" character varying DEFAULT '' NOT NULL, "logo" character varying DEFAULT '', "customer_group" character varying DEFAULT '', "commission" decimal(10,2) DEFAULT 0.0, "contact_email" character varying DEFAULT '' NOT NULL, "contact_number" character varying DEFAULT '' NOT NULL, "working_hours" text DEFAULT '', "consolidated_name" character varying DEFAULT '', "consolidated_email" character varying DEFAULT '', "consolidated_number" character varying DEFAULT '', "beds" integer DEFAULT 0, "students" integer DEFAULT 0, "previous_year_uptake" decimal(10,2) DEFAULT 0.0, "international_students_percentage" decimal(10,2) DEFAULT 0.0, "extra_internal_info" text DEFAULT '', "banner" boolean DEFAULT FALSE, "banner_info" text DEFAULT '', "checkout" boolean DEFAULT FALSE, "checkout_info" text DEFAULT '', "landing_page" character varying DEFAULT '', "hub_spot_id" character varying DEFAULT '', "main_intake_date" timestamp(6), "discount_code" boolean DEFAULT FALSE, "active" boolean DEFAULT TRUE, "discount_code_value" character varying DEFAULT '', "order_info_level" character varying, "created_at" timestamp(6), "updated_at" timestamp(6))[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240325093430') RETURNING "version"[0m
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to DeviseCreateUsers (20240325093431)
+  [1m[36mTRANSACTION (41.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (37.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "first_name" character varying DEFAULT '' NOT NULL, "last_name" character varying DEFAULT '' NOT NULL, "position" text DEFAULT '' NOT NULL, "phone_number" character varying DEFAULT '' NOT NULL, "info_field_internal" text DEFAULT '', "reset_password_token" character varying, "reset_password_sent_at" timestamp(6), "remember_created_at" timestamp(6), "created_at" timestamp(6), "updated_at" timestamp(6), "partner_id" bigint NOT NULL)[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE INDEX "index_users_on_partner_id" ON "users" ("partner_id")[0m
+  [1m[35m (9.2ms)[0m  [1m[35mALTER TABLE "users" ADD CONSTRAINT "fk_rails_b517ecf66a"
+FOREIGN KEY ("partner_id")
+  REFERENCES "partners" ("id")
+ ON DELETE CASCADE[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240325093431') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateActiveAdminComments (20240325093433)
+  [1m[36mTRANSACTION (40.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (86.1ms)[0m  [1m[35mCREATE TABLE "active_admin_comments" ("id" bigserial primary key, "namespace" character varying, "body" text, "resource_type" character varying, "resource_id" bigint, "author_type" character varying, "author_id" bigint, "created_at" timestamp(6), "updated_at" timestamp(6))[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE INDEX "index_active_admin_comments_on_resource" ON "active_admin_comments" ("resource_type", "resource_id")[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE INDEX "index_active_admin_comments_on_author" ON "active_admin_comments" ("author_type", "author_id")[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE INDEX "index_active_admin_comments_on_namespace" ON "active_admin_comments" ("namespace")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240325093433') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateResidences (20240325194852)
+  [1m[36mTRANSACTION (40.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.5ms)[0m  [1m[35mCREATE TABLE "residences" ("id" bigserial primary key, "name" character varying DEFAULT '' NOT NULL, "weekend_delivery" boolean DEFAULT FALSE, "pre_arrival_delivery" integer, "contact_name" character varying DEFAULT '' NOT NULL, "contact_email" character varying DEFAULT '' NOT NULL, "contact_phone" character varying DEFAULT '' NOT NULL, "vehicle_size" character varying DEFAULT '', "delivery_into_room" boolean DEFAULT FALSE, "delivery_pickup_location" character varying DEFAULT '', "delivery_reception" boolean DEFAULT FALSE, "manned_reception" boolean DEFAULT FALSE, "no_pallets" boolean DEFAULT FALSE, "delivery_general_info" text DEFAULT '', "what_word_first" character varying DEFAULT '', "what_word_second" character varying DEFAULT '', "what_word_third" character varying DEFAULT '', "active" boolean DEFAULT TRUE, "residence_block" character varying DEFAULT '', "address" character varying DEFAULT '', "apartment" character varying DEFAULT '', "city" character varying DEFAULT '', "postcode" character varying DEFAULT '', "country" character varying DEFAULT '', "partner_id" bigint NOT NULL, "created_at" timestamp(6), "updated_at" timestamp(6))[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE INDEX "index_residences_on_partner_id" ON "residences" ("partner_id")[0m
+  [1m[35m (1.1ms)[0m  [1m[35mALTER TABLE "residences" ADD CONSTRAINT "fk_rails_ca59c3c634"
+FOREIGN KEY ("partner_id")
+  REFERENCES "partners" ("id")
+ ON DELETE CASCADE[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240325194852') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateBlocks (20240325194921)
+  [1m[36mTRANSACTION (24.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.0ms)[0m  [1m[35mCREATE TABLE "blocks" ("id" bigserial primary key, "name" character varying DEFAULT '' NOT NULL, "what_word_first" character varying DEFAULT '', "what_word_second" character varying DEFAULT '', "what_word_third" character varying DEFAULT '', "active" boolean DEFAULT TRUE, "residence_block" character varying DEFAULT '', "address" character varying DEFAULT '', "apartment" character varying DEFAULT '', "city" character varying DEFAULT '', "postcode" character varying DEFAULT '', "country" character varying DEFAULT '', "residence_id" bigint NOT NULL, "created_at" timestamp(6), "updated_at" timestamp(6))[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE INDEX "index_blocks_on_residence_id" ON "blocks" ("residence_id")[0m
+  [1m[35m (1.1ms)[0m  [1m[35mALTER TABLE "blocks" ADD CONSTRAINT "fk_rails_aec7047621"
+FOREIGN KEY ("residence_id")
+  REFERENCES "residences" ("id")
+ ON DELETE CASCADE[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240325194921') RETURNING "version"[0m
+  [1m[36mTRANSACTION (42.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateSubBlocks (20240325194936)
+  [1m[36mTRANSACTION (86.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (55.2ms)[0m  [1m[35mCREATE TABLE "sub_blocks" ("id" bigserial primary key, "name" character varying DEFAULT '' NOT NULL, "what_word_first" character varying DEFAULT '', "what_word_second" character varying DEFAULT '', "what_word_third" character varying DEFAULT '', "active" boolean DEFAULT TRUE, "residence_block" character varying DEFAULT '', "address" character varying DEFAULT '', "apartment" character varying DEFAULT '', "city" character varying DEFAULT '', "postcode" character varying DEFAULT '', "country" character varying DEFAULT '', "block_id" bigint NOT NULL, "created_at" timestamp(6), "updated_at" timestamp(6))[0m
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE INDEX "index_sub_blocks_on_block_id" ON "sub_blocks" ("block_id")[0m
+  [1m[35m (1.9ms)[0m  [1m[35mALTER TABLE "sub_blocks" ADD CONSTRAINT "fk_rails_85bd09bdae"
+FOREIGN KEY ("block_id")
+  REFERENCES "blocks" ("id")
+ ON DELETE CASCADE[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240325194936') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateRooms (20240325195002)
+  [1m[36mTRANSACTION (37.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.7ms)[0m  [1m[35mCREATE TABLE "rooms" ("id" bigserial primary key, "name" character varying DEFAULT '' NOT NULL, "residence_id" bigint, "block_id" bigint, "sub_block_id" bigint, "created_at" timestamp(6), "updated_at" timestamp(6))[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE INDEX "index_rooms_on_residence_id" ON "rooms" ("residence_id")[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE INDEX "index_rooms_on_block_id" ON "rooms" ("block_id")[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE INDEX "index_rooms_on_sub_block_id" ON "rooms" ("sub_block_id")[0m
+  [1m[35m (1.9ms)[0m  [1m[35mALTER TABLE "rooms" ADD CONSTRAINT "fk_rails_d5efb73723"
+FOREIGN KEY ("residence_id")
+  REFERENCES "residences" ("id")
+ ON DELETE CASCADE[0m
+  [1m[35m (3.9ms)[0m  [1m[35mALTER TABLE "rooms" ADD CONSTRAINT "fk_rails_ff6051c43e"
+FOREIGN KEY ("block_id")
+  REFERENCES "blocks" ("id")
+ ON DELETE CASCADE[0m
+  [1m[35m (1.6ms)[0m  [1m[35mALTER TABLE "rooms" ADD CONSTRAINT "fk_rails_045543b096"
+FOREIGN KEY ("sub_block_id")
+  REFERENCES "sub_blocks" ("id")
+ ON DELETE CASCADE[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240325195002') RETURNING "version"[0m
+  [1m[36mTRANSACTION (41.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (36.9ms)[0m  [1m[34mSELECT pg_advisory_unlock(2326345832472128565)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2024-05-18 01:06:19 +0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Admin::DashboardController#index as */*
+Completed 401 Unauthorized in 22ms (ActiveRecord: 0.0ms | Allocations: 2674)
+
+
+Started GET "/" for ::1 at 2024-05-18 01:06:22 +0500
+Processing by Admin::DashboardController#index as HTML
+Completed 401 Unauthorized in 4ms (ActiveRecord: 0.0ms | Allocations: 441)
+
+
+Started GET "/admin/login" for ::1 at 2024-05-18 01:06:22 +0500
+Processing by ActiveAdmin::Devise::SessionsController#new as HTML
+  Rendering layout /Users/apple/.rvm/gems/ruby-3.1.2/gems/activeadmin-3.2.0/app/views/layouts/active_admin_logged_out.html.erb
+  Rendering /Users/apple/.rvm/gems/ruby-3.1.2/gems/activeadmin-3.2.0/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out
+  Rendered /Users/apple/.rvm/gems/ruby-3.1.2/gems/activeadmin-3.2.0/app/views/active_admin/devise/shared/_links.erb (Duration: 1.7ms | Allocations: 525)
+  Rendered /Users/apple/.rvm/gems/ruby-3.1.2/gems/activeadmin-3.2.0/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out (Duration: 28.9ms | Allocations: 10413)
+  Rendered layout /Users/apple/.rvm/gems/ruby-3.1.2/gems/activeadmin-3.2.0/app/views/layouts/active_admin_logged_out.html.erb (Duration: 205.0ms | Allocations: 60411)
+Completed 200 OK in 2529ms (Views: 221.1ms | ActiveRecord: 2073.1ms | Allocations: 86928)
+
+

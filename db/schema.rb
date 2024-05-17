@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_04_13_152201) do
+ActiveRecord::Schema[7.1].define(version: 2024_03_25_195002) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -28,29 +28,18 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_13_152201) do
     t.index ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource"
   end
 
-  create_table "addresses", force: :cascade do |t|
-    t.string "residence_block", default: "", null: false
-    t.string "address", default: "", null: false
-    t.string "apartment", default: "", null: false
-    t.string "city", default: "", null: false
-    t.string "postcode", default: "", null: false
-    t.string "country", default: "", null: false
-    t.bigint "residence_id"
-    t.bigint "block_id"
-    t.bigint "sub_block_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.index ["block_id"], name: "index_addresses_on_block_id"
-    t.index ["residence_id"], name: "index_addresses_on_residence_id"
-    t.index ["sub_block_id"], name: "index_addresses_on_sub_block_id"
-  end
-
   create_table "blocks", force: :cascade do |t|
     t.string "name", default: "", null: false
     t.string "what_word_first", default: ""
     t.string "what_word_second", default: ""
     t.string "what_word_third", default: ""
     t.boolean "active", default: true
+    t.string "residence_block", default: ""
+    t.string "address", default: ""
+    t.string "apartment", default: ""
+    t.string "city", default: ""
+    t.string "postcode", default: ""
+    t.string "country", default: ""
     t.bigint "residence_id", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -107,6 +96,12 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_13_152201) do
     t.string "what_word_second", default: ""
     t.string "what_word_third", default: ""
     t.boolean "active", default: true
+    t.string "residence_block", default: ""
+    t.string "address", default: ""
+    t.string "apartment", default: ""
+    t.string "city", default: ""
+    t.string "postcode", default: ""
+    t.string "country", default: ""
     t.bigint "partner_id", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -131,6 +126,12 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_13_152201) do
     t.string "what_word_second", default: ""
     t.string "what_word_third", default: ""
     t.boolean "active", default: true
+    t.string "residence_block", default: ""
+    t.string "address", default: ""
+    t.string "apartment", default: ""
+    t.string "city", default: ""
+    t.string "postcode", default: ""
+    t.string "country", default: ""
     t.bigint "block_id", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -156,9 +157,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_13_152201) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "addresses", "blocks", on_delete: :cascade
-  add_foreign_key "addresses", "residences", on_delete: :cascade
-  add_foreign_key "addresses", "sub_blocks", on_delete: :cascade
   add_foreign_key "blocks", "residences", on_delete: :cascade
   add_foreign_key "residences", "partners", on_delete: :cascade
   add_foreign_key "rooms", "blocks", on_delete: :cascade

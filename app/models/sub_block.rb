@@ -4,7 +4,13 @@
 #
 #  id               :bigint           not null, primary key
 #  active           :boolean          default(TRUE)
+#  address          :string           default("")
+#  apartment        :string           default("")
+#  city             :string           default("")
+#  country          :string           default("")
 #  name             :string           default(""), not null
+#  postcode         :string           default("")
+#  residence_block  :string           default("")
 #  what_word_first  :string           default("")
 #  what_word_second :string           default("")
 #  what_word_third  :string           default("")
@@ -23,5 +29,4 @@
 class SubBlock < ApplicationRecord
   belongs_to :block
   has_many :rooms, dependent: :destroy
-  has_many :addresses, dependent: :destroy
 end

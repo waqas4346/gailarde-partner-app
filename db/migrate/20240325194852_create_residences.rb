@@ -20,6 +20,12 @@ class CreateResidences < ActiveRecord::Migration[7.1]
       t.string :what_word_second, default: ""
       t.string :what_word_third, default: ""
       t.boolean :active,  default: true
+      t.string :residence_block,               default: ""
+      t.string :address,               default: ""
+      t.string :apartment,               default: ""
+      t.string :city,               default: ""
+      t.string :postcode,               default: ""
+      t.string :country,               default: ""
       t.references :partner, null: false
       t.timestamps null: true
     end
