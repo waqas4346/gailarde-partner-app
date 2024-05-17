@@ -48,108 +48,68 @@ class PartnerSerializer < ActiveModel::Serializer
 
   class ResidenceSerializer < ActiveModel::Serializer
     attributes :id, :name, :active, :weekend_delivery, :pre_arrival_delivery, :what_word_first,
-               :what_word_second, :what_word_third
+               :what_word_second, :what_word_third, :address_object
+
+    def address_object
+      country = IsoCountryCodes.search_by_name(object.country)
+      {
+        address1: object.address,
+        address2: object.apartment,
+        zip: object.postcode,
+        countryCode: country[0]&.alpha2,
+        country: object.country,
+        city: object.city
+      }
+    end
     has_many :blocks
     has_many :rooms
-    has_many :addresses
     class RoomSerializer < ActiveModel::Serializer
       attributes :id, :name
     end
 
-    class AddressSerializer < ActiveModel::Serializer
-      attributes :address1, :address2, :city, :zip, :countryCode
     
-      def address1
-        object.address
-      end
-    
-      def address2
-        object.apartment
-      end
-    
-      def zip
-        object.postcode
-      end
-    
-      def countryCode
-
-        country = IsoCountryCodes.search_by_name(object.country)
-        if country
-          return country[0]&.alpha2
-        else
-          return nil
-        end
-
-      end
-    end
 
     class BlockSerializer < ActiveModel::Serializer
-      attributes :id, :name, :active
+      attributes :id, :name, :active, :address_object
+
+      def address_object
+        country = IsoCountryCodes.search_by_name(object.country)
+        {
+          address1: object.address,
+          address2: object.apartment,
+          zip: object.postcode,
+          countryCode: country[0]&.alpha2,
+          country: object.country,
+          city: object.city
+        }
+      end
       has_many :sub_blocks
       has_many :rooms
-      has_many :addresses
 
       class RoomSerializer < ActiveModel::Serializer
         attributes :id, :name
       end
 
-      class AddressSerializer < ActiveModel::Serializer
-        attributes :address1, :address2, :city, :zip, :countryCode
-      
-        def address1
-          object.address
-        end
-      
-        def address2
-          object.apartment
-        end
-      
-        def zip
-          object.postcode
-        end
-
-        def countryCode
-          country = IsoCountryCodes.search_by_name(object.country)
-          if country
-            return country[0]&.alpha2
-          else
-            return nil
-          end
-        end
-      end
 
       class SubBlockSerializer < ActiveModel::Serializer
-        attributes :id, :name, :active
-        has_many :rooms
-        has_many :addresses
-        class RoomSerializer < ActiveModel::Serializer
-          attributes :id, :name
+        attributes :id, :name, :active, :address_object
+
+        def address_object
+          country = IsoCountryCodes.search_by_name(object.country)
+          {
+            address1: object.address,
+            address2: object.apartment,
+            zip: object.postcode,
+            countryCode: country[0]&.alpha2,
+            country: object.country,
+            city: object.city
+          }
         end
 
-        class AddressSerializer < ActiveModel::Serializer
-          attributes :address1, :address2, :city, :zip, :countryCode, :country
-        
-          def address1
-            object.address
-          end
-        
-          def address2
-            object.apartment
-          end
-        
-          def zip
-            object.postcode
-          end
-        
-          def countryCode
-            country = IsoCountryCodes.search_by_name(object.country)
-            if country
-              return country[0]&.alpha2
-            else
-              return nil
-            end
-    
-          end
+        has_many :rooms
+
+        class RoomSerializer < ActiveModel::Serializer
+          attributes :id, :name
         end
       end
     end
