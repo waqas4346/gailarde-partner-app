@@ -37,7 +37,7 @@
 require 'iso_country_codes'
 
 class PartnerSerializer < ActiveModel::Serializer
-  attributes :id, :name, :active, :parameter
+  attributes :id, :name, :active, :parameter, :checkout, :checkout_info
 
   # def attributes(*args)
   #   hash = super
@@ -51,12 +51,18 @@ class PartnerSerializer < ActiveModel::Serializer
                :what_word_second, :what_word_third, :address_object
 
     def address_object
-      country = IsoCountryCodes.search_by_name(object.country)
+      if object.country.present?
+        country = IsoCountryCodes.search_by_name(object.country)
+        # rest of your code
+      else
+        # handle the case where object.country is nil
+        country = nil
+      end
       {
         address1: object.address,
         address2: object.apartment,
         zip: object.postcode,
-        countryCode: country[0]&.alpha2,
+        countryCode: country&.first&.alpha2 ,
         country: object.country,
         city: object.city
       }
@@ -73,12 +79,18 @@ class PartnerSerializer < ActiveModel::Serializer
       attributes :id, :name, :active, :address_object
 
       def address_object
-        country = IsoCountryCodes.search_by_name(object.country)
+        if object.country.present?
+          country = IsoCountryCodes.search_by_name(object.country)
+          # rest of your code
+        else
+          # handle the case where object.country is nil
+          country = nil
+        end
         {
           address1: object.address,
           address2: object.apartment,
           zip: object.postcode,
-          countryCode: country[0]&.alpha2,
+          countryCode: country&.first&.alpha2 ,
           country: object.country,
           city: object.city
         }
@@ -95,12 +107,18 @@ class PartnerSerializer < ActiveModel::Serializer
         attributes :id, :name, :active, :address_object
 
         def address_object
-          country = IsoCountryCodes.search_by_name(object.country)
+          if object.country.present?
+            country = IsoCountryCodes.search_by_name(object.country)
+            # rest of your code
+          else
+            # handle the case where object.country is nil
+            country = nil
+          end
           {
             address1: object.address,
             address2: object.apartment,
             zip: object.postcode,
-            countryCode: country[0]&.alpha2,
+            countryCode: country&.first&.alpha2,
             country: object.country,
             city: object.city
           }
