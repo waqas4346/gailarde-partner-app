@@ -5,4 +5,9 @@ class Api::PartnersController < ApplicationController
     render json: @partners
   end
 
+  def day_times
+    @partners = WeekDaysTime.all
+    render json: @partners
+  end
+
 end

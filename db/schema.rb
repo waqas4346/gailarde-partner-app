@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_25_195002) do
+ActiveRecord::Schema[7.1].define(version: 2024_05_28_220407) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -155,6 +155,23 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_25_195002) do
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["partner_id"], name: "index_users_on_partner_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  create_table "week_days_times", force: :cascade do |t|
+    t.datetime "monday_cuttoff_time"
+    t.datetime "tuesday_cuttoff_time"
+    t.datetime "wednesday_cuttoff_time"
+    t.datetime "thursday_cuttoff_time"
+    t.datetime "friday_cuttoff_time"
+    t.datetime "saturday_cuttoff_time"
+    t.datetime "sunday_cuttoff_time"
+    t.integer "monday_lead_time"
+    t.integer "tuesday_lead_time"
+    t.integer "wednesday_lead_time"
+    t.integer "thursday_lead_time"
+    t.integer "friday_lead_time"
+    t.integer "saturday_lead_time"
+    t.integer "sunday_lead_time"
   end
 
   add_foreign_key "blocks", "residences", on_delete: :cascade

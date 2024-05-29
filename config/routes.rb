@@ -12,7 +12,11 @@ Rails.application.routes.draw do
 
 
   namespace :api do
-    resources :partners
+    resources :partners, only: %i[index] do 
+      collection do
+        get 'day_times'
+      end
+    end
     
   end
   root to: 'admin/dashboard#index'
