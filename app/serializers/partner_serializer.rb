@@ -51,13 +51,12 @@ class PartnerSerializer < ActiveModel::Serializer
                :what_word_second, :what_word_third, :address_object
 
     def address_object
-      if object.country.present?
+      begin
         country = IsoCountryCodes.search_by_name(object.country)
-        # rest of your code
-      else
-        # handle the case where object.country is nil
+      rescue IsoCountryCodes::UnknownCodeError, TypeError
         country = nil
       end
+    
       {
         address1: object.address,
         address2: object.apartment,
@@ -79,11 +78,9 @@ class PartnerSerializer < ActiveModel::Serializer
       attributes :id, :name, :active, :address_object
 
       def address_object
-        if object.country.present?
+        begin
           country = IsoCountryCodes.search_by_name(object.country)
-          # rest of your code
-        else
-          # handle the case where object.country is nil
+        rescue IsoCountryCodes::UnknownCodeError, TypeError
           country = nil
         end
         {
@@ -107,13 +104,12 @@ class PartnerSerializer < ActiveModel::Serializer
         attributes :id, :name, :active, :address_object
 
         def address_object
-          if object.country.present?
+          begin
             country = IsoCountryCodes.search_by_name(object.country)
-            # rest of your code
-          else
-            # handle the case where object.country is nil
+          rescue IsoCountryCodes::UnknownCodeError, TypeError
             country = nil
           end
+
           {
             address1: object.address,
             address2: object.apartment,
