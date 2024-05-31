@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_05_31_071040) do
+ActiveRecord::Schema[7.1].define(version: 2024_05_31_081145) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -44,6 +44,15 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_31_071040) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.index ["residence_id"], name: "index_blocks_on_residence_id"
+  end
+
+  create_table "country_logics", force: :cascade do |t|
+    t.integer "country_lead_time"
+    t.text "countries"
+  end
+
+  create_table "holidays", force: :cascade do |t|
+    t.text "days"
   end
 
   create_table "partners", force: :cascade do |t|
@@ -172,6 +181,11 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_31_071040) do
     t.integer "friday_lead_time"
     t.integer "saturday_lead_time"
     t.integer "sunday_lead_time"
+  end
+
+  create_table "zip_code_logics", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_foreign_key "blocks", "residences", on_delete: :cascade
