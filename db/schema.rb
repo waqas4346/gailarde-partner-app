@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_05_28_220407) do
+ActiveRecord::Schema[7.1].define(version: 2024_05_31_071040) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -158,13 +158,13 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_28_220407) do
   end
 
   create_table "week_days_times", force: :cascade do |t|
-    t.datetime "monday_cuttoff_time"
-    t.datetime "tuesday_cuttoff_time"
-    t.datetime "wednesday_cuttoff_time"
-    t.datetime "thursday_cuttoff_time"
-    t.datetime "friday_cuttoff_time"
-    t.datetime "saturday_cuttoff_time"
-    t.datetime "sunday_cuttoff_time"
+    t.string "monday_cuttoff_time"
+    t.string "tuesday_cuttoff_time"
+    t.string "wednesday_cuttoff_time"
+    t.string "thursday_cuttoff_time"
+    t.string "friday_cuttoff_time"
+    t.string "saturday_cuttoff_time"
+    t.string "sunday_cuttoff_time"
     t.integer "monday_lead_time"
     t.integer "tuesday_lead_time"
     t.integer "wednesday_lead_time"
