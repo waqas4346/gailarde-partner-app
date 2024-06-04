@@ -183,11 +183,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_31_081145) do
     t.integer "sunday_lead_time"
   end
 
-  create_table "zip_code_logics", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   add_foreign_key "blocks", "residences", on_delete: :cascade
   add_foreign_key "residences", "partners", on_delete: :cascade
   add_foreign_key "rooms", "blocks", on_delete: :cascade
