@@ -16,7 +16,7 @@ class Api::PartnersController < ApplicationController
 
   def clear_cache
     Rails.cache.delete('active_partners')
-    render json: { message: 'Cache cleared successfully' }
+    index()
   end
 
 end
