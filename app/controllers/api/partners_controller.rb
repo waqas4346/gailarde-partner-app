@@ -1,8 +1,12 @@
 class Api::PartnersController < ApplicationController
 
   def index
-    @partners = Partner.all.where(active: true)
-    render json: @partners
+    cached_partners = Rails.cache.fetch('active_partners') do
+      partners = Partner.where(active: true)
+      ActiveModelSerializers::SerializableResource.new(partners).as_json
+    end
+  
+    render json: cached_partners
   end
 
   def day_times
