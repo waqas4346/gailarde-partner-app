@@ -58,12 +58,12 @@ class PartnerSerializer < ActiveModel::Serializer
       end
     
       {
-        address1: object.address,
-        address2: object.apartment,
-        zip: object.postcode,
-        countryCode: country&.first&.alpha2 ,
-        country: object.country,
-        city: object.city
+        address1: object.address.presence || "",
+        address2: object.apartment.presence || "",
+        zip: object.postcode.presence || "",
+        countryCode: country&.first&.alpha2,
+        country: object.country.presence || "",
+        city: object.city.presence || ""
       }
     end
     has_many :blocks
@@ -84,12 +84,12 @@ class PartnerSerializer < ActiveModel::Serializer
           country = nil
         end
         {
-          address1: object.address,
-          address2: object.apartment,
-          zip: object.postcode,
+          address1: object.address.presence || "",
+          address2: object.apartment.presence || "",
+          zip: object.postcode.presence || "",
           countryCode: country&.first&.alpha2 ,
-          country: object.country,
-          city: object.city
+          country: object.country.presence,
+          city: object.city.presence || ""
         }
       end
       has_many :sub_blocks
@@ -111,12 +111,12 @@ class PartnerSerializer < ActiveModel::Serializer
           end
 
           {
-            address1: object.address,
-            address2: object.apartment,
-            zip: object.postcode,
+            address1: object.address.presence || "",
+            address2: object.apartment.presence || "",
+            zip: object.postcode.presence || "",
             countryCode: country&.first&.alpha2,
-            country: object.country,
-            city: object.city
+            country: object.country.presence,
+            city: object.city.presence || ""
           }
         end
 
