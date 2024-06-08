@@ -16,6 +16,7 @@ Rails.application.routes.draw do
       collection do
         get 'day_times'
         get 'clear_cache'
+        get 'zip_codes'
       end
     end
     

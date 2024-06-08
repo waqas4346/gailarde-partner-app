@@ -22,7 +22,7 @@ default: &default
 development:
   <<: *default
   database: gailarde_dashboard_development
-  # url: "postgres://ysjaqbgbueyhkx:b4fa5ab4b16360aafc49d1705389840cbf6ef5ebde86f36b762b154a2c70daed@ec2-34-242-154-118.eu-west-1.compute.amazonaws.com:5432/dapa9rq6mmd0bl"
+  url: "postgres://ysjaqbgbueyhkx:b4fa5ab4b16360aafc49d1705389840cbf6ef5ebde86f36b762b154a2c70daed@ec2-34-242-154-118.eu-west-1.compute.amazonaws.com:5432/dapa9rq6mmd0bl"
 
   # The specified database role being used to connect to PostgreSQL.
   # To create additional roles in PostgreSQL see `$ createuser --help`.

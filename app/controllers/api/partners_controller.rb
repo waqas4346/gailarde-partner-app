@@ -10,13 +10,18 @@ class Api::PartnersController < ApplicationController
   end
 
   def day_times
-    @partners = WeekDaysTime.all
-    render json: @partners
+    @day_times = WeekDaysTime.all
+    render json: @day_times
   end
 
   def clear_cache
     Rails.cache.delete('active_partners')
     index()
+  end
+
+  def zip_codes
+    @day_times = ZipCodeLogic.all
+    render json: @day_times
   end
 
 end
