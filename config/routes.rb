@@ -14,9 +14,10 @@ Rails.application.routes.draw do
   namespace :api do
     resources :partners, only: %i[index] do 
       collection do
-        get 'day_times'
         get 'clear_cache'
-        get 'zip_codes'
+        get 'day_times_logic'
+        get 'zip_codes_logic'
+        get 'countries_logic'
       end
     end
     
