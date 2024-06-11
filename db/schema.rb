@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_05_31_081145) do
+ActiveRecord::Schema[7.1].define(version: 2024_06_11_102133) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -49,6 +49,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_31_081145) do
   create_table "country_logics", force: :cascade do |t|
     t.integer "country_lead_time"
     t.text "countries"
+    t.boolean "weekend_available", default: false
   end
 
   create_table "holidays", force: :cascade do |t|
@@ -181,6 +182,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_31_081145) do
     t.integer "friday_lead_time"
     t.integer "saturday_lead_time"
     t.integer "sunday_lead_time"
+    t.boolean "weekend_available", default: false
   end
 
   create_table "zip_code_logics", force: :cascade do |t|

@@ -17,6 +17,7 @@
 #  tuesday_lead_time      :integer
 #  wednesday_cuttoff_time :string
 #  wednesday_lead_time    :integer
+#  weekend_available      :boolean          default(FALSE)
 #
 class WeekDaysTime < ApplicationRecord
 end

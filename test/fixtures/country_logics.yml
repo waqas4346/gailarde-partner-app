@@ -5,6 +5,7 @@
 #  id                :bigint           not null, primary key
 #  countries         :text
 #  country_lead_time :integer
+#  weekend_available :boolean          default(FALSE)
 #
 
 # This model initially had no columns defined. If you add columns to the
