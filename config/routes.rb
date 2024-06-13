@@ -18,6 +18,10 @@ Rails.application.routes.draw do
         get 'day_times_logic'
         get 'zip_codes_logic'
         get 'countries_logic'
+        get 'zip_code_shippings'
+        get 'weekend_shippings'
+        get 'shipping_threshold'
+        get 'shipping_infos'
       end
     end
     

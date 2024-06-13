@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_06_11_102133) do
+ActiveRecord::Schema[7.1].define(version: 2024_06_13_072457) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -50,6 +50,11 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_11_102133) do
     t.integer "country_lead_time"
     t.text "countries"
     t.boolean "weekend_available", default: false
+  end
+
+  create_table "free_shipping_thresholds", force: :cascade do |t|
+    t.decimal "threshhold"
+    t.text "message", default: ""
   end
 
   create_table "holidays", force: :cascade do |t|
@@ -130,6 +135,16 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_11_102133) do
     t.index ["sub_block_id"], name: "index_rooms_on_sub_block_id"
   end
 
+  create_table "shipping_infos", force: :cascade do |t|
+    t.text "shipping_methods"
+    t.text "info_text"
+  end
+
+  create_table "shipping_methods_with_zipcodes", force: :cascade do |t|
+    t.text "shipping_methods"
+    t.text "zip_codes"
+  end
+
   create_table "sub_blocks", force: :cascade do |t|
     t.string "name", default: "", null: false
     t.string "what_word_first", default: ""
@@ -183,6 +198,10 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_11_102133) do
     t.integer "saturday_lead_time"
     t.integer "sunday_lead_time"
     t.boolean "weekend_available", default: false
+  end
+
+  create_table "weekend_shipping_methods", force: :cascade do |t|
+    t.text "shipping_methods"
   end
 
   create_table "zip_code_logics", force: :cascade do |t|

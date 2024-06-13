@@ -29,4 +29,24 @@ class Api::PartnersController < ApplicationController
     render json: @countries_logic
   end
 
+  def zip_code_shippings
+    @zip_code_shippings = ShippingMethodsWithZipcode.all
+    render json: @zip_code_shippings
+  end
+
+  def weekend_shippings
+    @weekend_shippings = WeekendShippingMethod.all
+    render json: @weekend_shippings
+  end
+
+  def shipping_threshold
+    @shipping_threshold = FreeShippingThreshold.all
+    render json: @shipping_threshold
+  end
+
+  def shipping_infos
+    @shipping_infos = ShippingInfo.all
+    render json: @shipping_infos
+  end
+
 end
