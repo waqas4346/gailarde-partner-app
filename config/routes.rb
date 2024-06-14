@@ -22,6 +22,8 @@ Rails.application.routes.draw do
         get 'weekend_shippings'
         get 'shipping_threshold'
         get 'shipping_infos'
+        get 'holidays'
+        get 'shipping_custom_message'
       end
     end
     

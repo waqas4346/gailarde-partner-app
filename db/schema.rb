@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_06_13_072457) do
+ActiveRecord::Schema[7.1].define(version: 2024_06_14_141553) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -133,6 +133,11 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_13_072457) do
     t.index ["block_id"], name: "index_rooms_on_block_id"
     t.index ["residence_id"], name: "index_rooms_on_residence_id"
     t.index ["sub_block_id"], name: "index_rooms_on_sub_block_id"
+  end
+
+  create_table "shipping_custom_messages", force: :cascade do |t|
+    t.string "title", default: ""
+    t.text "message", default: ""
   end
 
   create_table "shipping_infos", force: :cascade do |t|

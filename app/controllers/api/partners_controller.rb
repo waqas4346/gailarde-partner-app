@@ -49,4 +49,14 @@ class Api::PartnersController < ApplicationController
     render json: @shipping_infos
   end
 
+  def holidays
+    @holidays = Holiday.all
+    render json: @holidays
+  end
+
+  def shipping_custom_message
+    @shipping_custom_message = ShippingCustomMessage.last
+    render json: @shipping_custom_message
+  end
+
 end
