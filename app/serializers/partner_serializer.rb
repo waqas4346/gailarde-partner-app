@@ -16,7 +16,7 @@
 #  contact_email                     :string           default(""), not null
 #  contact_number                    :string           default(""), not null
 #  customer_group                    :string           default("")
-#  discount_code                     :boolean          default(FALSE)
+#  discount_code                     :string           default("")
 #  discount_code_value               :string           default("")
 #  extra_internal_info               :text             default("")
 #  international_students_percentage :decimal(10, 2)   default(0.0)

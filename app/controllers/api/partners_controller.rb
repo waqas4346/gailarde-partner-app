@@ -10,8 +10,12 @@ class Api::PartnersController < ApplicationController
   end
 
   def clear_cache
-    Rails.cache.delete('active_partners')
-    index()
+    if Rails.cache.delete('active_partners')
+      render json: { message: "Cache is cleared" }
+        
+    else
+      render json: { message: "Cache not cleared" } 
+    end
   end
 
   def zip_codes_logic

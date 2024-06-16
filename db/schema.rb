@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_06_14_141553) do
+ActiveRecord::Schema[7.1].define(version: 2024_06_16_112054) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -85,7 +85,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_14_141553) do
     t.string "landing_page", default: ""
     t.string "hub_spot_id", default: ""
     t.datetime "main_intake_date"
-    t.boolean "discount_code", default: false
+    t.string "discount_code", default: ""
     t.boolean "active", default: true
     t.string "discount_code_value", default: ""
     t.string "order_info_level"
@@ -203,6 +203,9 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_14_141553) do
     t.integer "saturday_lead_time"
     t.integer "sunday_lead_time"
     t.boolean "weekend_available", default: false
+    t.string "custom_message_title", default: ""
+    t.text "custom_message_description", default: ""
+    t.text "holidays", default: ""
   end
 
   create_table "weekend_shipping_methods", force: :cascade do |t|
