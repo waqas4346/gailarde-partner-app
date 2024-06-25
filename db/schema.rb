@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_06_16_112054) do
+ActiveRecord::Schema[7.1].define(version: 2024_06_25_092842) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -50,11 +50,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_16_112054) do
     t.integer "country_lead_time"
     t.text "countries"
     t.boolean "weekend_available", default: false
-  end
-
-  create_table "free_shipping_thresholds", force: :cascade do |t|
-    t.decimal "threshhold"
-    t.text "message", default: ""
   end
 
   create_table "holidays", force: :cascade do |t|
@@ -206,6 +201,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_16_112054) do
     t.string "custom_message_title", default: ""
     t.text "custom_message_description", default: ""
     t.text "holidays", default: ""
+    t.decimal "threshold"
+    t.text "message", default: ""
   end
 
   create_table "weekend_shipping_methods", force: :cascade do |t|

@@ -8,12 +8,14 @@
 #  friday_cuttoff_time        :string
 #  friday_lead_time           :integer
 #  holidays                   :text             default("")
+#  message                    :text             default("")
 #  monday_cuttoff_time        :string
 #  monday_lead_time           :integer
 #  saturday_cuttoff_time      :string
 #  saturday_lead_time         :integer
 #  sunday_cuttoff_time        :string
 #  sunday_lead_time           :integer
+#  threshold                  :decimal(, )
 #  thursday_cuttoff_time      :string
 #  thursday_lead_time         :integer
 #  tuesday_cuttoff_time       :string
