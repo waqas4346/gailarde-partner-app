@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_06_25_092842) do
+ActiveRecord::Schema[7.1].define(version: 2024_06_26_130734) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -92,9 +92,9 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_25_092842) do
     t.string "name", default: "", null: false
     t.boolean "weekend_delivery", default: false
     t.integer "pre_arrival_delivery"
-    t.string "contact_name", default: "", null: false
-    t.string "contact_email", default: "", null: false
-    t.string "contact_phone", default: "", null: false
+    t.string "contact_name", default: ""
+    t.string "contact_email", default: ""
+    t.string "contact_phone", default: ""
     t.string "vehicle_size", default: ""
     t.boolean "delivery_into_room", default: false
     t.string "delivery_pickup_location", default: ""

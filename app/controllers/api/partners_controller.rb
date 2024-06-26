@@ -43,10 +43,10 @@ class Api::PartnersController < ApplicationController
     render json: @weekend_shippings
   end
 
-  def shipping_threshold
-    @shipping_threshold = FreeShippingThreshold.all
-    render json: @shipping_threshold
-  end
+  # def shipping_threshold
+  #   @shipping_threshold = FreeShippingThreshold.all
+  #   render json: @shipping_threshold
+  # end
 
   def shipping_infos
     @shipping_infos = ShippingInfo.all

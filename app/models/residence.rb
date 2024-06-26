@@ -7,9 +7,9 @@
 #  address                  :string           default("")
 #  apartment                :string           default("")
 #  city                     :string           default("")
-#  contact_email            :string           default(""), not null
-#  contact_name             :string           default(""), not null
-#  contact_phone            :string           default(""), not null
+#  contact_email            :string           default("")
+#  contact_name             :string           default("")
+#  contact_phone            :string           default("")
 #  country                  :string           default("")
 #  delivery_general_info    :text             default("")
 #  delivery_into_room       :boolean          default(FALSE)
