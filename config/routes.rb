@@ -24,6 +24,7 @@ Rails.application.routes.draw do
         get 'shipping_infos'
         get 'holidays'
         get 'shipping_custom_message'
+        post 'order_create'
       end
     end
     

@@ -1,4 +1,5 @@
 class Api::PartnersController < ApplicationController
+  skip_before_action :verify_authenticity_token
 
   def index
     cached_partners = Rails.cache.fetch('active_partners') do
@@ -61,6 +62,12 @@ class Api::PartnersController < ApplicationController
   def shipping_custom_message
     @shipping_custom_message = ShippingCustomMessage.last
     render json: @shipping_custom_message
+  end
+
+  def order_create
+    puts "hyeeeeeee----------->>>>>>>>>>>>>>\n"
+    puts request.body.read
+    puts request
   end
 
 end
