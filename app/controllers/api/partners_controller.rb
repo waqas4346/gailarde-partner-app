@@ -10,6 +10,24 @@ class Api::PartnersController < ApplicationController
     render json: cached_partners
   end
 
+  def active_partners
+    partners = Partner.where(active: true)
+
+    partners_array = partners.map do |partner|
+      {
+        id: partner.id,
+        name: partner.name,
+        parameter: partner.parameter,
+        banner: partner.banner,
+        banner_info: partner.banner_info,
+        logo: partner.logo
+      }
+    end
+
+    render json: partners_array
+
+  end
+
   def clear_cache
     if Rails.cache.delete('active_partners')
       render json: { message: "Cache is cleared" }
