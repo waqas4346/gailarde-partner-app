@@ -63,7 +63,8 @@ class PartnerSerializer < ActiveModel::Serializer
         zip: object.postcode.presence || "",
         countryCode: country&.first&.alpha2,
         country: object.country.presence || "",
-        city: object.city.presence || ""
+        city: object.city.presence || "",
+        company: object.residence_block.presence || ""
       }
     end
     has_many :blocks
@@ -89,7 +90,8 @@ class PartnerSerializer < ActiveModel::Serializer
           zip: object.postcode.presence || "",
           countryCode: country&.first&.alpha2 ,
           country: object.country.presence,
-          city: object.city.presence || ""
+          city: object.city.presence || "",
+          company: object.residence_block.presence || ""
         }
       end
       has_many :sub_blocks
@@ -116,7 +118,8 @@ class PartnerSerializer < ActiveModel::Serializer
             zip: object.postcode.presence || "",
             countryCode: country&.first&.alpha2,
             country: object.country.presence,
-            city: object.city.presence || ""
+            city: object.city.presence || "",
+            company: object.residence_block.presence || ""
           }
         end
 
