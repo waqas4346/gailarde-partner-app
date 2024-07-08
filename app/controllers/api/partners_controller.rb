@@ -11,10 +11,12 @@ class Api::PartnersController < ApplicationController
   end
 
   def active_partners
-    partners = Partner.where(active: true)
+    parameter = params[:parameter]
 
-    partners_array = partners.map do |partner|
-      {
+    partner = Partner.where(active: true, parameter: parameter).first
+  
+    if partner
+      partner_hash = {
         id: partner.id,
         name: partner.name,
         parameter: partner.parameter,
@@ -22,11 +24,12 @@ class Api::PartnersController < ApplicationController
         banner_info: partner.banner_info,
         logo: partner.logo
       }
+      render json: partner_hash
+    else
+      render json: { error: "No active partner found with the given parameter" }, status: :not_found
     end
-
-    render json: partners_array
-
   end
+  
 
   def clear_cache
     if Rails.cache.delete('active_partners')
