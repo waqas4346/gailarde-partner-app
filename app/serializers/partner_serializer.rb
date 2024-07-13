@@ -76,7 +76,8 @@ class PartnerSerializer < ActiveModel::Serializer
     
 
     class BlockSerializer < ActiveModel::Serializer
-      attributes :id, :name, :active, :address_object
+      attributes :id, :name, :active, :address_object, :what_word_first,
+                 :what_word_second, :what_word_third
 
       def address_object
         begin
@@ -103,7 +104,8 @@ class PartnerSerializer < ActiveModel::Serializer
 
 
       class SubBlockSerializer < ActiveModel::Serializer
-        attributes :id, :name, :active, :address_object
+        attributes :id, :name, :active, :address_object, :what_word_first,
+                   :what_word_second, :what_word_third
 
         def address_object
           begin
