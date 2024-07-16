@@ -16,6 +16,7 @@
 #  sunday_cuttoff_time        :string
 #  sunday_lead_time           :integer
 #  threshold                  :decimal(, )
+#  threshold_title            :string           default("")
 #  thursday_cuttoff_time      :string
 #  thursday_lead_time         :integer
 #  tuesday_cuttoff_time       :string

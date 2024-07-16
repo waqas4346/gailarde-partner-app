@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_06_26_130734) do
+ActiveRecord::Schema[7.1].define(version: 2024_07_16_081100) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -203,6 +203,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_26_130734) do
     t.text "holidays", default: ""
     t.decimal "threshold"
     t.text "message", default: ""
+    t.string "threshold_title", default: ""
   end
 
   create_table "weekend_shipping_methods", force: :cascade do |t|
