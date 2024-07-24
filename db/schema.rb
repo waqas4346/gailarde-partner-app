@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_07_16_081100) do
+ActiveRecord::Schema[7.1].define(version: 2024_07_23_192309) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -54,6 +54,41 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_16_081100) do
 
   create_table "holidays", force: :cascade do |t|
     t.text "days"
+  end
+
+  create_table "items", force: :cascade do |t|
+    t.string "product_name"
+    t.string "sku"
+    t.integer "quantity"
+    t.decimal "price", precision: 10, scale: 2
+    t.bigint "order_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["order_id"], name: "index_items_on_order_id"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.string "shopify_order_id", null: false
+    t.string "status"
+    t.string "order_number"
+    t.datetime "order_date"
+    t.decimal "order_value", precision: 10, scale: 2
+    t.string "payment_status"
+    t.string "first_name"
+    t.string "last_name"
+    t.string "email"
+    t.string "company"
+    t.string "address_1"
+    t.string "address_2"
+    t.string "zip_code"
+    t.string "city"
+    t.string "fulfillment_status"
+    t.string "tracking_number"
+    t.bigint "partner_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["partner_id"], name: "index_orders_on_partner_id"
+    t.index ["shopify_order_id"], name: "index_orders_on_shopify_order_id", unique: true
   end
 
   create_table "partners", force: :cascade do |t|
@@ -216,6 +251,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_16_081100) do
   end
 
   add_foreign_key "blocks", "residences", on_delete: :cascade
+  add_foreign_key "items", "orders", on_delete: :cascade
+  add_foreign_key "orders", "partners", on_delete: :cascade
   add_foreign_key "residences", "partners", on_delete: :cascade
   add_foreign_key "rooms", "blocks", on_delete: :cascade
   add_foreign_key "rooms", "residences", on_delete: :cascade

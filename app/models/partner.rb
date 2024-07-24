@@ -37,6 +37,7 @@ class Partner < ApplicationRecord
   has_many :users, dependent: :destroy
 
   has_many :residences, dependent: :destroy
+  has_many :orders, dependent: :destroy
 
 
   def self.ransackable_attributes(auth_object = nil)

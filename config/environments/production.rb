@@ -5,6 +5,8 @@ Rails.application.configure do
 
   # Code is not reloaded between requests.
   config.enable_reloading = false
+  config.hosts << "1ec3-182-176-157-120.ngrok-free.app"
+    config.hosts << "1ec3-182-176-157-120.ngrok-free.app"
 
   # Eager load code on boot. This eager loads most of Rails and
   # your application in memory, allowing both threaded web servers
@@ -93,12 +95,19 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+  
 
   # Enable DNS rebinding protection and other `Host` header attacks.
   # config.hosts = [
   #   "example.com",     # Allow requests from example.com
   #   /.*\.example\.com/ # Allow requests from subdomains like `www.example.com`
   # ]
+  config.hosts = [
+  IPAddr.new("0.0.0.0/0"),        # All IPv4 addresses.
+  IPAddr.new("::/0"),             # All IPv6 addresses.
+  "localhost",                    # The localhost reserved domain.
+  ENV["RAILS_DEVELOPMENT_HOSTS"]  # Additional comma-separated hosts for development.
+]
   # Skip DNS rebinding protection for the default health check endpoint.
   # config.host_authorization = { exclude: ->(request) { request.path == "/up" } }
 end
