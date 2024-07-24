@@ -25,7 +25,11 @@ Rails.application.routes.draw do
         get 'holidays'
         get 'shipping_custom_message'
         get 'active_partners'
-        post 'order_create'
+        post 'orders_create'
+        post 'orders_updated'
+        post 'orders_refund'
+        post 'orders_fulfillment'
+        post 'orders_cancel'
       end
     end
     

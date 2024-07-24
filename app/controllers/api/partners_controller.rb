@@ -81,101 +81,112 @@ class Api::PartnersController < ApplicationController
     render json: @shipping_custom_message
   end
 
-  def order_create
-    byebug
+  def orders_create
+    process_order(params)
+  end
 
-    order_data = JSON.parse(request.body.read)
-    status = request.headers['X-Shopify-Topic']
-    shopify_order_id = order_data['order_id'].to_s || order_data['id'].to_s # Ensure it's a string
+  def orders_updated
+    process_order(params)
+  end
 
-    partner_parameter = extract_partner_parameter(order_data)
-    discount_code = extract_discount_code(order_data)
+  def orders_refund
+    order = Order.find_by(shopify_order_id: params[:id])
 
-    partner = Partner.find_by(parameter: partner_parameter) || Partner.find_by(discount_code: discount_code)
-    order = Order.find_or_initialize_by(shopify_order_id: shopify_order_id)
+    if order
+      # Calculate and update the refund amount
+      refund_amount = params[:refunds].sum { |refund| refund[:transactions].sum { |transaction| transaction[:amount].to_f } }
+      order.update(order_value: order.order_value - refund_amount)
 
-    if partner || order.partner_id
-      order.assign_attributes(
-        status: status,
-        order_number: order_data['order_number'],
-        order_date: order_data['created_at'],
-        order_value: calculate_order_value(order_data),
-        payment_status: order_data['financial_status'],
-        first_name: order_data.dig('billing_address', 'first_name'),
-        last_name: order_data.dig('billing_address', 'last_name'),
-        email: order_data['email'],
-        company: order_data.dig('billing_address', 'company'),
-        address_1: order_data.dig('billing_address', 'address1'),
-        address_2: order_data.dig('billing_address', 'address2'),
-        zip_code: order_data.dig('billing_address', 'zip'),
-        city: order_data.dig('billing_address', 'city'),
-        fulfillment_status: order_data['fulfillment_status'],
-        tracking_number: order_data.dig('fulfillments').map { |f| f['tracking_number'] }.join(', '),
-        partner_id: partner.id || order.partner_id
-      )
-      order.save!
-
-      # Update or create order items
-      
-      new_items = order_data['line_items'].map do |item|
-        {
-          sku: item['sku'],
-          product_name: item['name'],
-          quantity: item['quantity'],
-          price: item['price']
-        }
-      end
-
-      # Create or update order items
-      new_items.each do |item|
-        existing_item = order.items.find_by(sku: item[:sku])
-        if existing_item
-          existing_item.update(item)
-        else
-          order.items.create(item)
-        end
-      end
-
-      # Destroy items that are no longer present in the new data
-      order.items.where.not(sku: new_items.map { |i| i[:sku] }).destroy_all
-    else
-      render json: { message: 'No matching partner found' }, status: :not_found
+      # Save refund details if necessary
+      order.update(total_refunds: order.total_refunds.to_f + refund_amount)
     end
+
+    head :ok
+  end
+
+  def orders_fulfillment
+    order = Order.find_by(shopify_order_id: params[:id])
+
+    if order
+      # Update fulfillment status
+      order.update(fulfillment_status: params[:fulfillment_status], status: "fulfilled")
+
+      # Update tracking numbers
+      tracking_numbers = params[:fulfillments].map { |f| f[:tracking_number] }.reject(&:blank?)
+      order.update(tracking_number: tracking_numbers.join(', '))
+    end
+
+    head :ok
+  end
+
+  def orders_cancel
+    order = Order.find_by(shopify_order_id: params[:id])
+
+    if order
+      # Update the order status to cancelled
+      order.update(
+        status: 'cancelled',
+        cancellation_date: Time.current, # Set the cancellation date to the current time
+        cancellation_reason: params.dig(:cancel_reason) || 'No reason provided'
+      )
+    end
+
+    head :ok
   end
 
   private
 
-  def verify_shopify_webhook
-    data = request.body.read
-    digest = OpenSSL::Digest.new('sha256')
-    hmac = Base64.strict_encode64(OpenSSL::HMAC.digest(digest, SHOPIFY_WEBHOOK_SECRET, data))
+  def process_order(order_data)
+    shopify_order_id = order_data[:id].to_s
+    order = Order.find_or_initialize_by(shopify_order_id: shopify_order_id)
 
-    unless ActiveSupport::SecurityUtils.secure_compare(hmac, request.headers['X-Shopify-Hmac-Sha256'])
-      render json: { message: 'Unauthorized' }, status: :unauthorized
-      return false
+    partner = find_partner(order_data)
+
+    if partner
+      order.assign_attributes(
+        status: "created",
+        order_number: order_data[:order_number],
+        order_date: order_data[:created_at],
+        order_value: order_data[:total_price].to_f,
+        currency: order_data[:currency],
+        payment_status: order_data[:financial_status],
+        first_name: order_data.dig(:billing_address, :first_name),
+        last_name: order_data.dig(:billing_address, :last_name),
+        email: order_data[:email],
+        company: order_data.dig(:billing_address, :company),
+        address_1: order_data.dig(:billing_address, :address1),
+        address_2: order_data.dig(:billing_address, :address2),
+        zip_code: order_data.dig(:billing_address, :zip),
+        city: order_data.dig(:billing_address, :city),
+        country: order_data.dig(:billing_address, :country),
+        fulfillment_status: order_data[:fulfillment_status],
+        tracking_number: order_data[:fulfillments].map { |f| f[:tracking_number] }.join(', '),
+        partner: partner
+      )
+
+      order.items.destroy_all
+
+      order_data[:line_items].each do |line_item|
+        order.items.build(
+          product_name: line_item[:name],
+          sku: line_item[:sku],
+          quantity: line_item[:quantity],
+          price: line_item[:price].to_f
+        )
+      end
+
+      order.save!
     end
 
-    request.body.rewind
+    head :ok
   end
 
-  def extract_discount_code(order_data)
-    discount_codes = order_data.dig('discount_codes')
-    discount_codes.present? ? discount_codes.first['code'] : nil
+  def find_partner(order_data)
+    partner_parameter = order_data[:note_attributes]&.find { |na| na[:name] == 'Partner Parameter' }&.dig(:value)
+    discount_code = order_data[:discount_codes]&.first&.dig(:code)
+
+    Partner.find_by(parameter: partner_parameter) || Partner.find_by(discount_code: discount_code)
   end
 
-  def extract_partner_parameter(order_data)
-    note_attributes = order_data.dig('note_attributes')
-    partner_attribute = note_attributes&.find { |attr| attr['name'] == 'Partner Parameter' }
-    partner_attribute ? partner_attribute['value'] : nil
-  end
 
-  def calculate_order_value(order_data)
-    if order_data['status'] == 'cancelled'
-      0
-    else
-      refunds = order_data['refunds'].flat_map { |r| r['transactions'] }.sum { |t| t['amount'].to_f }
-      total = order_data['total_price'].to_f - refunds
-      total
-    end
-  end
 end

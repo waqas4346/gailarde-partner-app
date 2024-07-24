@@ -2,26 +2,31 @@
 #
 # Table name: orders
 #
-#  id                 :bigint           not null, primary key
-#  address_1          :string
-#  address_2          :string
-#  city               :string
-#  company            :string
-#  email              :string
-#  first_name         :string
-#  fulfillment_status :string
-#  last_name          :string
-#  order_date         :datetime
-#  order_number       :string
-#  order_value        :decimal(10, 2)
-#  payment_status     :string
-#  status             :string
-#  tracking_number    :string
-#  zip_code           :string
-#  created_at         :datetime         not null
-#  updated_at         :datetime         not null
-#  partner_id         :bigint           not null
-#  shopify_order_id   :string           not null
+#  id                  :bigint           not null, primary key
+#  address_1           :string
+#  address_2           :string
+#  cancellation_date   :datetime
+#  cancellation_reason :string
+#  city                :string
+#  company             :string
+#  country             :string
+#  currency            :string
+#  email               :string
+#  first_name          :string
+#  fulfillment_status  :string
+#  last_name           :string
+#  order_date          :datetime
+#  order_number        :string
+#  order_value         :decimal(10, 2)
+#  payment_status      :string
+#  status              :string
+#  total_refunds       :decimal(10, 2)   default(0.0)
+#  tracking_number     :string
+#  zip_code            :string
+#  created_at          :datetime         not null
+#  updated_at          :datetime         not null
+#  partner_id          :bigint           not null
+#  shopify_order_id    :string           not null
 #
 # Indexes
 #

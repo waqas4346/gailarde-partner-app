@@ -72,6 +72,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_23_192309) do
     t.string "status"
     t.string "order_number"
     t.datetime "order_date"
+    t.datetime "cancellation_date"
     t.decimal "order_value", precision: 10, scale: 2
     t.string "payment_status"
     t.string "first_name"
@@ -82,8 +83,12 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_23_192309) do
     t.string "address_2"
     t.string "zip_code"
     t.string "city"
+    t.string "country"
+    t.string "cancellation_reason"
     t.string "fulfillment_status"
     t.string "tracking_number"
+    t.decimal "total_refunds", precision: 10, scale: 2, default: "0.0"
+    t.string "currency"
     t.bigint "partner_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
