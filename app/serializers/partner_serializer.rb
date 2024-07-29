@@ -27,6 +27,8 @@
 #  order_info_level                  :string
 #  parameter                         :string           default(""), not null
 #  previous_year_uptake              :decimal(10, 2)   default(0.0)
+#  show_fulfillment                  :boolean          default(TRUE)
+#  show_tracking_number              :boolean          default(TRUE)
 #  students                          :integer          default(0)
 #  working_hours                     :text             default("")
 #  created_at                        :datetime

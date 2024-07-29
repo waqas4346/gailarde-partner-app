@@ -19,23 +19,29 @@
 #  order_number        :string
 #  order_value         :decimal(10, 2)
 #  payment_status      :string
+#  products            :text
 #  status              :string
+#  tarrival_date       :datetime
 #  total_refunds       :decimal(10, 2)   default(0.0)
 #  tracking_number     :string
 #  zip_code            :string
 #  created_at          :datetime         not null
 #  updated_at          :datetime         not null
 #  partner_id          :bigint           not null
+#  residence_id        :bigint
 #  shopify_order_id    :string           not null
+#  student_id          :string
 #
 # Indexes
 #
 #  index_orders_on_partner_id        (partner_id)
+#  index_orders_on_residence_id      (residence_id)
 #  index_orders_on_shopify_order_id  (shopify_order_id) UNIQUE
 #
 # Foreign Keys
 #
 #  fk_rails_...  (partner_id => partners.id) ON DELETE => cascade
+#  fk_rails_...  (residence_id => residences.id) ON DELETE => cascade
 #
 require "test_helper"
 

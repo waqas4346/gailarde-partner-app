@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_07_23_192309) do
+ActiveRecord::Schema[7.1].define(version: 2024_07_26_111520) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -58,6 +58,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_23_192309) do
 
   create_table "items", force: :cascade do |t|
     t.string "product_name"
+    t.string "line_item_id"
     t.string "sku"
     t.integer "quantity"
     t.decimal "price", precision: 10, scale: 2
@@ -71,6 +72,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_23_192309) do
     t.string "shopify_order_id", null: false
     t.string "status"
     t.string "order_number"
+    t.string "student_id"
     t.datetime "order_date"
     t.datetime "cancellation_date"
     t.decimal "order_value", precision: 10, scale: 2
@@ -78,7 +80,9 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_23_192309) do
     t.string "first_name"
     t.string "last_name"
     t.string "email"
+    t.datetime "tarrival_date"
     t.string "company"
+    t.text "products"
     t.string "address_1"
     t.string "address_2"
     t.string "zip_code"
@@ -90,9 +94,11 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_23_192309) do
     t.decimal "total_refunds", precision: 10, scale: 2, default: "0.0"
     t.string "currency"
     t.bigint "partner_id", null: false
+    t.bigint "residence_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["partner_id"], name: "index_orders_on_partner_id"
+    t.index ["residence_id"], name: "index_orders_on_residence_id"
     t.index ["shopify_order_id"], name: "index_orders_on_shopify_order_id", unique: true
   end
 
@@ -126,6 +132,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_23_192309) do
     t.string "order_info_level"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean "show_fulfillment", default: true
+    t.boolean "show_tracking_number", default: true
   end
 
   create_table "residences", force: :cascade do |t|
@@ -258,6 +266,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_23_192309) do
   add_foreign_key "blocks", "residences", on_delete: :cascade
   add_foreign_key "items", "orders", on_delete: :cascade
   add_foreign_key "orders", "partners", on_delete: :cascade
+  add_foreign_key "orders", "residences", on_delete: :cascade
   add_foreign_key "residences", "partners", on_delete: :cascade
   add_foreign_key "rooms", "blocks", on_delete: :cascade
   add_foreign_key "rooms", "residences", on_delete: :cascade

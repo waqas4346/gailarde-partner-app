@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  
   devise_for :users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -8,7 +9,10 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
   # Defines the root path route ("/")
-  
+  # authenticate :user, lambda { |u| u.admin? } do
+    require 'sidekiq/web'
+    mount Sidekiq::Web => '/sidekiq'
+  # end
 
 
   namespace :api do
@@ -30,6 +34,7 @@ Rails.application.routes.draw do
         post 'orders_refund'
         post 'orders_fulfillment'
         post 'orders_cancel'
+        post 'order_webhooks'
       end
     end
     

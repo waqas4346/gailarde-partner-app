@@ -9,6 +9,7 @@
 #  sku          :string
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
+#  line_item_id :string
 #  order_id     :bigint           not null
 #
 # Indexes

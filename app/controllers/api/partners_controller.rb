@@ -81,12 +81,21 @@ class Api::PartnersController < ApplicationController
     render json: @shipping_custom_message
   end
 
-  def orders_create
-    process_order(params)
-  end
+  def order_webhooks
+    topic = request.headers["X-Shopify-Topic"]
 
-  def orders_updated
-    process_order(params)
+    order_data = params.permit!.to_h
+    byebug
+    case topic
+    when "orders/create"
+      ProcessOrderWorker.perform_async(order_data)
+    when "orders/refund"
+      OrdersRefundWorker.perform_async(order_data["id"], order_data["refunds"])
+    when "orders/fulfilled"
+      OrdersFulfillmentWorker.perform_async(order_data["id"], order_data["fulfillment_status"], order_data["fulfillments"])
+    when "orders/cancelled"
+      OrdersCancelWorker.perform_async(order_data["id"], order_data["cancel_reason"])
+    end
   end
 
   def orders_refund
