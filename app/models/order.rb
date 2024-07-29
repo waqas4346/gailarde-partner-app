@@ -5,6 +5,7 @@
 #  id                  :bigint           not null, primary key
 #  address_1           :string
 #  address_2           :string
+#  arrival_date        :datetime
 #  cancellation_date   :datetime
 #  cancellation_reason :string
 #  city                :string
@@ -21,7 +22,6 @@
 #  payment_status      :string
 #  products            :text
 #  status              :string
-#  tarrival_date       :datetime
 #  total_refunds       :decimal(10, 2)   default(0.0)
 #  tracking_number     :string
 #  zip_code            :string

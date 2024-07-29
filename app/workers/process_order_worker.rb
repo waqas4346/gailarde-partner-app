@@ -31,8 +31,8 @@ class ProcessOrderWorker
             student_id: student_id(order_data),
             arrival_date: arrival_date(order_data),
             products: products(order_data),
-            partner: partner,
-            residence: residence
+            partner_id: partner.id,
+            residence_id: residence.id
           )
     
           order.items.destroy_all

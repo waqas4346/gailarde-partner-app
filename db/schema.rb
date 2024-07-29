@@ -80,7 +80,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_26_111520) do
     t.string "first_name"
     t.string "last_name"
     t.string "email"
-    t.datetime "tarrival_date"
+    t.datetime "arrival_date"
     t.string "company"
     t.text "products"
     t.string "address_1"

@@ -12,7 +12,7 @@ class CreateOrders < ActiveRecord::Migration[7.1]
       t.string :first_name
       t.string :last_name
       t.string :email
-      t.datetime :tarrival_date
+      t.datetime :arrival_date
       t.string :company
       t.text :products
       t.string :address_1

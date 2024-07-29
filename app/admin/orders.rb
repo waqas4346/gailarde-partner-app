@@ -19,37 +19,81 @@ ActiveAdmin.register Order do
         Order.none
       end
     end
+
+    def index
+      @order_info_level = current_user.partner.order_info_level if current_user.partner.present?
+      @total_orders = scoped_collection.count
+      @total_revenue = scoped_collection.sum { |order| order.order_value - order.total_refunds }
+      @anticipated_commission = calculate_anticipated_commission
+      super
+    end
+
+    private
+
+    def calculate_anticipated_commission
+      if current_user.partner.present?
+        commission_rate = current_user.partner.commission.to_f
+        @total_revenue * (commission_rate / 100)
+      else
+        0
+      end
+    end
   end
 
   # Index view
   index do
+    panel "Analytics" do
+      div class: "analytics_summary" do
+        div class: "score_card" do
+          h3 "Number of Orders"
+          h2 total_orders
+        end
+        div class: "score_card" do
+          h3 "Revenue"
+          h2 number_to_currency(total_revenue)
+        end
+        div class: "score_card" do
+          h3 "Anticipated Commission"
+          h2 number_to_currency(anticipated_commission)
+        end
+      end
+    end
+
     selectable_column
-    id_column
-    column :status
+    # id_column
+    # column :status
     column "Order Number", :order_number
     column "Order Date", :order_date
     column "Order Value" do |order|
-      number_to_currency(order.order_value)
+      number_to_currency(order.order_value - order.total_refunds)
     end
     column "Payment Status", :payment_status
-    column "First Name", :first_name
-    column "Last Name", :last_name
-    column "Email", :email
-    column "Company", :company
-    column "Address 1", :address_1
-    column "Address 2", :address_2
-    column "ZIP Code", :zip_code
-    column "City", :city
-    column "Country", :country
-    column "Cancellation Date", :cancellation_date
-    column "Cancellation Reason", :cancellation_reason
-    column "Fulfillment Status", :fulfillment_status
-    column "Tracking Number" do |order|
-      order.tracking_number.split(',').join(', ')
+    # column "Arrival Date", :arrival_date
+
+    # Conditionally display columns based on order_info_level
+    if current_user.partner.order_info_level.include?("name")
+      column "First Name", :first_name
+      column "Last Name", :last_name
     end
-    column "Products" do |order|
-      order.items.map { |item| "#{item.quantity}x #{item.product_name} | #{item.sku}" }.join("<br>").html_safe
+
+    if current_user.partner.order_info_level.include?("email")
+      column "Email", :email
+      column "Student ID", :student_id
     end
+
+    if current_user.partner.order_info_level.include?("address")
+      column "Company", :company
+      column "Address 1", :address_1
+      column "Address 2", :address_2
+      column "ZIP Code", :zip_code
+      column "City", :city
+      column "Country", :country
+    end
+
+    if current_user.partner.order_info_level.include?("products")
+      column "Country", :products
+    end
+
     actions defaults: [:show, :destroy] # Excludes the Edit action
   end
 
@@ -61,18 +105,35 @@ ActiveAdmin.register Order do
       row :order_number
       row :order_date
       row :order_value do |order|
-        number_to_currency(order.order_value)
+        number_to_currency(order.order_value - order.total_refunds)
       end
       row :payment_status
-      row :first_name
-      row :last_name
-      row :email
-      row :company
-      row :address_1
-      row :address_2
-      row :zip_code
-      row :city
-      row :country
+      row :arrival_date
+
+      if current_user.partner.order_info_level.include?("name")
+        row :first_name
+        row :last_name
+      end
+
+      if current_user.partner.order_info_level.include?("email")
+        row :email
+        row :student_id
+      end
+
+      if current_user.partner.order_info_level.include?("address")
+        row :company
+        row :address_1
+        row :address_2
+        row :zip_code
+        row :city
+        row :country
+      end
+
+
+      if current_user.partner.order_info_level.include?("products")
+        row "Country", :products
+      end
+
       row :cancellation_date
       row :cancellation_reason
       row :fulfillment_status
