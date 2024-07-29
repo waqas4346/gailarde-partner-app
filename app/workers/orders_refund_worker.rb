@@ -6,10 +6,10 @@ class OrdersRefundWorker
   
       if order
         # Calculate and update the refund amount
-        refund_amount = refunds.sum { |refund| refund["transactions"].sum { |transaction| transaction["amount"].to_f } }
+        refund_amount = refunds["transactions"].sum { |transaction| transaction["amount"].to_f }
   
         # Save refund details if necessary
-        order.update(total_refunds: refund_amount)
+        order.update(total_refunds: order.total_refunds.to_f + refund_amount)
       end
     end
   end

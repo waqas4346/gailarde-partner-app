@@ -57,6 +57,11 @@ gem "bootsnap", require: false
 
 gem 'activeadmin'
 
+gem 'active_admin_sidebar'
+# Gemfile
+# gem 'ransack'
+
+
 # Plus integrations with:
 gem 'devise'
 gem 'cancancan'

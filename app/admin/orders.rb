@@ -1,16 +1,8 @@
 ActiveAdmin.register Order do
-  # Filter configuration
-  filter :shopify_order_id
-  filter :status
-  filter :order_number
-  filter :order_date
-  filter :payment_status
-  filter :partner
-  filter :fulfillment_status
-  filter :tracking_number
-  filter :cancellation_date
+  # Filters
+  filter :created_at, as: :date_range, label: 'Timeframe'
+  filter :residence_id, as: :select, collection: -> { Residence.pluck(:name, :id).append(['No Residence', 'no_residence']) }, label: 'Residence'
 
-  # Scope orders to the current user's partner
   controller do
     def scoped_collection
       if current_user.partner.present?
@@ -18,12 +10,13 @@ ActiveAdmin.register Order do
       else
         Order.none
       end
+
     end
 
     def index
       @order_info_level = current_user.partner.order_info_level if current_user.partner.present?
       @total_orders = scoped_collection.count
-      @total_revenue = scoped_collection.sum { |order| order.order_value - order.total_refunds }
+      @total_revenue = scoped_collection.where.not(status: 'cancelled').sum { |order| order.order_value - order.total_refunds }
       @anticipated_commission = calculate_anticipated_commission
       super
     end
@@ -40,7 +33,6 @@ ActiveAdmin.register Order do
     end
   end
 
-  # Index view
   index do
     panel "Analytics" do
       div class: "analytics_summary" do
@@ -60,17 +52,13 @@ ActiveAdmin.register Order do
     end
 
     selectable_column
-    # id_column
-    # column :status
     column "Order Number", :order_number
     column "Order Date", :order_date
     column "Order Value" do |order|
       number_to_currency(order.order_value - order.total_refunds)
     end
     column "Payment Status", :payment_status
-    # column "Arrival Date", :arrival_date
 
-    # Conditionally display columns based on order_info_level
     if current_user.partner.order_info_level.include?("name")
       column "First Name", :first_name
       column "Last Name", :last_name
@@ -91,13 +79,22 @@ ActiveAdmin.register Order do
     end
 
     if current_user.partner.order_info_level.include?("products")
-      column "Country", :products
+      column "Products", :products
+    end
+
+    if current_user.partner.show_fulfillment
+      column "Fulfillment Status", :fulfillment_status
+    end
+
+    if current_user.partner.show_tracking_number
+      column "Tracking Number" do |order|
+        order.tracking_number.split(',').join(', ')
+      end
     end
 
     actions defaults: [:show, :destroy] # Excludes the Edit action
   end
 
-  # Show view
   show do
     attributes_table do
       row :shopify_order_id
@@ -129,15 +126,14 @@ ActiveAdmin.register Order do
         row :country
       end
 
-
       if current_user.partner.order_info_level.include?("products")
-        row "Country", :products
+        row :products
       end
 
       row :cancellation_date
       row :cancellation_reason
-      row :fulfillment_status
-      row :tracking_number
+      row :fulfillment_status if current_user.partner.show_fulfillment
+      row :tracking_number if current_user.partner.show_tracking_number
       row :partner
     end
 
@@ -153,7 +149,6 @@ ActiveAdmin.register Order do
     end
   end
 
-  # Form view (if you still want to keep it for admin users)
   form do |f|
     f.semantic_errors
 
@@ -176,14 +171,13 @@ ActiveAdmin.register Order do
       f.input :country, as: :country_select
       f.input :cancellation_date, as: :datetime_picker
       f.input :cancellation_reason
-      f.input :fulfillment_status
-      f.input :tracking_number
+      f.input :fulfillment_status if current_user.partner.show_fulfillment
+      f.input :tracking_number if current_user.partner.show_tracking_number
       f.input :partner, as: :select, collection: Partner.all.map { |p| [p.name, p.id] }
     end
 
     f.inputs "Items" do
-      f.has_many :items, allow_destroy: true, new_record: true do |item|
-        item.object ||= f.object.items.build if item.object.nil?
+      f.has_many :items, allow_destroy: true, new_record: true do
         item.input :product_name
         item.input :sku
         item.input :quantity
@@ -194,7 +188,6 @@ ActiveAdmin.register Order do
     f.actions
   end
 
-  # Permit parameters
   permit_params do
     permitted = [:shopify_order_id, :status, :order_number, :order_date, :order_value, :currency, :payment_status,
                   :first_name, :last_name, :email, :company, :address_1, :address_2, :zip_code,

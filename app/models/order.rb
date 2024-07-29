@@ -46,6 +46,7 @@
 class Order < ApplicationRecord
     belongs_to :partner
     has_many :items, dependent: :destroy
+    belongs_to :residence, optional: true
 
     validates :shopify_order_id, uniqueness: true
 
@@ -55,6 +56,6 @@ class Order < ApplicationRecord
     end
 
     def self.ransackable_attributes(auth_object = nil)
-        %w[shopify_order_id status order_number order_date order_value payment_status first_name last_name email company address_1 address_2 zip_code city fulfillment_status tracking_number]
+        %w[shopify_order_id status order_number order_date residence_id created_at order_value payment_status first_name last_name email company address_1 address_2 zip_code city fulfillment_status tracking_number]
     end
 end

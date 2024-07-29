@@ -43,6 +43,7 @@ class Residence < ApplicationRecord
   belongs_to :partner
   has_many :blocks, dependent: :destroy
   has_many :rooms, dependent: :destroy
+  has_many :orders, dependent: :destroy
 
 
 end
