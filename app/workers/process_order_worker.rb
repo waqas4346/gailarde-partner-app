@@ -2,7 +2,6 @@ class ProcessOrderWorker
     include Sidekiq::Worker
 
     def perform(order_data)
-        byebug
         shopify_order_id = order_data["id"].to_s
         order = Order.find_or_initialize_by(shopify_order_id: shopify_order_id)
     

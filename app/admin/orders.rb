@@ -1,4 +1,7 @@
 ActiveAdmin.register Order do
+  actions :all, except: [:new]
+
+  config.batch_actions = false
   # Filters
   filter :created_at, as: :date_range, label: 'Timeframe'
   filter :residence_id, as: :select, collection: -> { Residence.pluck(:name, :id).append(['No Residence', 'no_residence']) }, label: 'Residence'
@@ -10,7 +13,6 @@ ActiveAdmin.register Order do
       else
         Order.none
       end
-
     end
 
     def index
@@ -33,7 +35,8 @@ ActiveAdmin.register Order do
     end
   end
 
-  index do
+  index download_links: [:csv] do
+
     panel "Analytics" do
       div class: "analytics_summary" do
         div class: "score_card" do
@@ -91,102 +94,9 @@ ActiveAdmin.register Order do
         order.tracking_number.split(',').join(', ')
       end
     end
-
-    actions defaults: [:show, :destroy] # Excludes the Edit action
   end
 
-  show do
-    attributes_table do
-      row :shopify_order_id
-      row :status
-      row :order_number
-      row :order_date
-      row :order_value do |order|
-        number_to_currency(order.order_value - order.total_refunds)
-      end
-      row :payment_status
-      row :arrival_date
-
-      if current_user.partner.order_info_level.include?("name")
-        row :first_name
-        row :last_name
-      end
-
-      if current_user.partner.order_info_level.include?("email")
-        row :email
-        row :student_id
-      end
-
-      if current_user.partner.order_info_level.include?("address")
-        row :company
-        row :address_1
-        row :address_2
-        row :zip_code
-        row :city
-        row :country
-      end
-
-      if current_user.partner.order_info_level.include?("products")
-        row :products
-      end
-
-      row :cancellation_date
-      row :cancellation_reason
-      row :fulfillment_status if current_user.partner.show_fulfillment
-      row :tracking_number if current_user.partner.show_tracking_number
-      row :partner
-    end
-
-    panel "Items" do
-      table_for order.items do
-        column :product_name
-        column :sku
-        column :quantity
-        column :price do |item|
-          number_to_currency(item.price)
-        end
-      end
-    end
-  end
-
-  form do |f|
-    f.semantic_errors
-
-    f.inputs do
-      f.input :shopify_order_id
-      f.input :status
-      f.input :order_number
-      f.input :order_date, as: :datetime_picker
-      f.input :order_value
-      f.input :currency
-      f.input :payment_status
-      f.input :first_name
-      f.input :last_name
-      f.input :email
-      f.input :company
-      f.input :address_1
-      f.input :address_2
-      f.input :zip_code
-      f.input :city
-      f.input :country, as: :country_select
-      f.input :cancellation_date, as: :datetime_picker
-      f.input :cancellation_reason
-      f.input :fulfillment_status if current_user.partner.show_fulfillment
-      f.input :tracking_number if current_user.partner.show_tracking_number
-      f.input :partner, as: :select, collection: Partner.all.map { |p| [p.name, p.id] }
-    end
-
-    f.inputs "Items" do
-      f.has_many :items, allow_destroy: true, new_record: true do
-        item.input :product_name
-        item.input :sku
-        item.input :quantity
-        item.input :price
-      end
-    end
-
-    f.actions
-  end
+ 
 
   permit_params do
     permitted = [:shopify_order_id, :status, :order_number, :order_date, :order_value, :currency, :payment_status,
