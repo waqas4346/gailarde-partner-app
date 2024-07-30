@@ -58,6 +58,8 @@ gem "bootsnap", require: false
 gem 'activeadmin'
 
 gem 'active_admin_sidebar'
+gem 'inherited_resources'
+
 # Gemfile
 # gem 'ransack'
 

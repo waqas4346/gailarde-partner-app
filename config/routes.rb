@@ -38,13 +38,13 @@ Rails.application.routes.draw do
     end
     
   end
-  root to: 'admin/dashboard#index'
+  root to: 'admin/orders#index'
 
   # root to: 'application#redirect_to_root', constraints: ->(request) { !request.env['PATH_INFO'].start_with?('/admin') }
 
-  get '*path', to: 'admin/dashboard#index', constraints: ->(request) { !request.env['PATH_INFO'].start_with?('/admin') }
+  get '*path', to: 'admin/orders#index', constraints: ->(request) { !request.env['PATH_INFO'].start_with?('/admin') }
 
-  get '/admin/*path', to: 'admin/dashboard#index'
+  get '/admin/*path', to: 'admin/orders#index'
 
 
 

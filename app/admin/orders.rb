@@ -2,6 +2,7 @@ ActiveAdmin.register Order do
   actions :all, except: [:new]
 
   config.batch_actions = false
+
   # Filters
   filter :created_at, as: :date_range, label: 'Timeframe'
   filter :residence_id, as: :select, collection: -> { current_user.partner.residences.pluck(:name, :id).append(['No Residence', 'no_residence']) }, label: 'Residence'
@@ -36,7 +37,6 @@ ActiveAdmin.register Order do
   end
 
   index download_links: [:csv] do
-
     panel "Analytics" do
       div class: "analytics_summary" do
         div class: "score_card" do
@@ -96,12 +96,52 @@ ActiveAdmin.register Order do
     end
   end
 
- 
+  csv do
+    column "Order Number", &:order_number
+    column "Order Date", &:order_date
+    column "Order Value" do |order|
+      order.order_value - order.total_refunds
+    end
+    column "Payment Status", &:payment_status
+
+    if current_user.partner.order_info_level.include?("name")
+      column "First Name", &:first_name
+      column "Last Name", &:last_name
+    end
+
+    if current_user.partner.order_info_level.include?("email")
+      column "Email", &:email
+      column "Student ID", &:student_id
+    end
+
+    if current_user.partner.order_info_level.include?("address")
+      column "Company", &:company
+      column "Address 1", &:address_1
+      column "Address 2", &:address_2
+      column "ZIP Code", &:zip_code
+      column "City", &:city
+      column "Country", &:country
+    end
+
+    if current_user.partner.order_info_level.include?("products")
+      column "Products", &:products
+    end
+
+    if current_user.partner.show_fulfillment
+      column "Fulfillment Status", &:fulfillment_status
+    end
+
+    if current_user.partner.show_tracking_number
+      column "Tracking Number" do |order|
+        order.tracking_number.split(',').join(', ')
+      end
+    end
+  end
 
   permit_params do
     permitted = [:shopify_order_id, :status, :order_number, :order_date, :order_value, :currency, :payment_status,
-                  :first_name, :last_name, :email, :company, :address_1, :address_2, :zip_code,
-                  :city, :country, :cancellation_date, :cancellation_reason, :fulfillment_status, :tracking_number, :partner_id]
+                 :first_name, :last_name, :email, :company, :address_1, :address_2, :zip_code,
+                 :city, :country, :cancellation_date, :cancellation_reason, :fulfillment_status, :tracking_number, :partner_id]
     permitted << { items_attributes: [:id, :product_name, :sku, :quantity, :price, :_destroy] }
     permitted
   end

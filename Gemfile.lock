@@ -397,6 +397,7 @@ DEPENDENCIES
   devise
   draper
   importmap-rails
+  inherited_resources
   iso_country_codes
   jbuilder
   letter_opener

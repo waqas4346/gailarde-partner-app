@@ -11,9 +11,8 @@ class Api::PartnersController < ApplicationController
   end
 
   def active_partners
-    parameter = params[:parameter].downcase
-    partners = Partner.where("active = ? AND lower(parameter) = ?", true, parameter)
-  
+    parameter = params[:parameter]
+    partners = Partner.where(active: true, parameter: parameter)
     partners_array = partners.map do |partner|
       {
         id: partner.id,
