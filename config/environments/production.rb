@@ -70,6 +70,8 @@ Rails.application.configure do
   # Use a real queuing backend for Active Job (and separate queues per environment).
   # config.active_job.queue_adapter = :resque
   # config.active_job.queue_name_prefix = "gailarde_dashboard_production"
+  config.active_job.queue_adapter = :sidekiq
+
 
 
   config.action_controller.perform_caching = true
