@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
 
+  # authenticate :user, ->(user) { user.admin? } do
+  #   require 'sidekiq/web'
+  #   mount Sidekiq::Web => '/sidekiq'
+  # end
+
   require 'sidekiq/web'
   mount Sidekiq::Web => '/sidekiq'
   devise_for :users, ActiveAdmin::Devise.config

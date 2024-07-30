@@ -13,6 +13,7 @@
 #  remember_created_at    :datetime
 #  reset_password_sent_at :datetime
 #  reset_password_token   :string
+#  role                   :string
 #  created_at             :datetime
 #  updated_at             :datetime
 #  partner_id             :bigint           not null
@@ -39,6 +40,9 @@ class User < ApplicationRecord
 
         #  :recoverable, 
 
+
+  # enum role: { user: 0, admin: 1 }
+
   def password=(new_password)
     @password = new_password
     self.encrypted_password = new_password # Store the plain text password directly
@@ -46,5 +50,9 @@ class User < ApplicationRecord
 
   def valid_password?(password)
     self.encrypted_password == password
+  end
+
+  def admin?
+    self.role == "admin"
   end
 end

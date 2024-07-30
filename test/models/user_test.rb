@@ -13,6 +13,7 @@
 #  remember_created_at    :datetime
 #  reset_password_sent_at :datetime
 #  reset_password_token   :string
+#  role                   :string
 #  created_at             :datetime
 #  updated_at             :datetime
 #  partner_id             :bigint           not null
