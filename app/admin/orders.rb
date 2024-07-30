@@ -4,7 +4,7 @@ ActiveAdmin.register Order do
   config.batch_actions = false
   # Filters
   filter :created_at, as: :date_range, label: 'Timeframe'
-  filter :residence_id, as: :select, collection: -> { Residence.pluck(:name, :id).append(['No Residence', 'no_residence']) }, label: 'Residence'
+  filter :residence_id, as: :select, collection: -> { current_user.partner.residences.pluck(:name, :id).append(['No Residence', 'no_residence']) }, label: 'Residence'
 
   controller do
     def scoped_collection
