@@ -1,8 +1,5 @@
----
-:concurrency: 5
+:concurrency: <%= ENV.fetch('SIDEKIQ_CONCURRENCY', 10) %>
 :queues:
-  - default
-  - mailers
-  - critical
-  - low
-:logfile: ./log/sidekiq.log
+  - [default, <%= ENV.fetch('SIDEKIQ_DEFAULT_QUEUE_WEIGHT', 1) %>]
+  - [mailers, <%= ENV.fetch('SIDEKIQ_MAILERS_QUEUE_WEIGHT', 1) %>]
+  - [data, <%= ENV.fetch('SIDEKIQ_DATA_QUEUE_WEIGHT', 1) %>]
