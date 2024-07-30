@@ -45,11 +45,11 @@ ActiveAdmin.register Order do
         end
         div class: "score_card" do
           h3 "Revenue"
-          h2 number_to_currency(total_revenue)
+          h2 number_to_currency(total_revenue, unit: "£")
         end
         div class: "score_card" do
           h3 "Anticipated Commission"
-          h2 number_to_currency(anticipated_commission)
+          h2 number_to_currency(anticipated_commission, unit: "£")
         end
       end
     end
@@ -58,7 +58,7 @@ ActiveAdmin.register Order do
     column "Order Number", :order_number
     column "Order Date", :order_date
     column "Order Value" do |order|
-      number_to_currency(order.order_value - order.total_refunds)
+      number_to_currency(order.order_value - order.total_refunds, unit: "£")
     end
     column "Payment Status", :payment_status
 
