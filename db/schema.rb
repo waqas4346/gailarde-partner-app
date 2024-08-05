@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_07_30_115618) do
+ActiveRecord::Schema[7.1].define(version: 2024_07_31_174841) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -191,6 +191,13 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_30_115618) do
   create_table "shipping_methods_with_zipcodes", force: :cascade do |t|
     t.text "shipping_methods"
     t.text "zip_codes"
+  end
+
+  create_table "shopify_stores", force: :cascade do |t|
+    t.string "shop_name"
+    t.string "access_token"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "sub_blocks", force: :cascade do |t|

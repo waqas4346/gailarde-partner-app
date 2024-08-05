@@ -1,0 +1,18 @@
+# == Schema Information
+#
+# Table name: shopify_stores
+#
+#  id           :bigint           not null, primary key
+#  access_token :string
+#  shop_name    :string
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#
+
+one:
+  shop_name: MyString
+  access_token: MyString
+
+two:
+  shop_name: MyString
+  access_token: MyString
