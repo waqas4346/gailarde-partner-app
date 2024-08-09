@@ -5,15 +5,40 @@ ActiveAdmin.register Order do
 
   # Filters
   filter :order_date, as: :date_range, label: 'Timeframe'
-  filter :residence_id, as: :select, collection: -> { current_user.partner.residences.pluck(:name, :id).append(['No Residence', 'no_residence']) }, label: 'Residence'
+  filter :residence_id, as: :select, 
+       collection: -> { [['No Residence', ''], *current_user.partner.residences.pluck(:name, :id)] },
+       label: 'Residence',
+       include_blank: false
+
 
   controller do
     def scoped_collection
       if current_user.partner.present?
-        Order.where(partner: current_user.partner)
+        orders = Order.where(partner: current_user.partner)
+        filters = params[:q] || {}
+
+        apply_filters(orders, filters)
       else
         Order.none
       end
+    end
+
+    def apply_filters(scope, filters)
+      filters.each do |key, value|
+        case key
+        when 'order_date_gteq'
+          scope = scope.where('order_date >= ?', value) if value.present?
+        when 'order_date_lteq'
+          scope = scope.where('order_date <= ?', value) if value.present?
+        when 'residence_id_eq'
+          if value == 'no_residence'
+            scope = scope.where(residence_id: nil)
+          else
+            scope = scope.where(residence_id: value)
+          end
+        end
+      end
+      scope
     end
 
     def index

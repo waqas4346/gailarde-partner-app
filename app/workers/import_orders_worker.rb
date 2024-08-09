@@ -4,7 +4,7 @@ class ImportOrdersWorker
   def perform
     # Ensure the file exists
 
-    file_path = Rails.root.join('lib', 'data', 'orders.json')
+    file_path = Rails.root.join('lib', 'data', 'noah_dev_orders.json')
 
     # Ensure the file exists
     unless File.exist?(file_path)
@@ -31,54 +31,56 @@ class ImportOrdersWorker
 
     # Determine order status
     status = determine_status(order_data)
-
-    # Assign attributes to the order
-    order.assign_attributes(
-      shopify_order_id: order_data["Id"],
-      status: status,
-      order_date: order_data['Created at'],
-      order_value: order_data['Total'].to_f,
-      currency: order_data['Currency'],
-      payment_status: order_data['Financial Status'],
-      first_name: order_data['Billing Name'],
-      last_name: '', # Assuming 'last_name' is not provided separately
-      email: order_data['Email'],
-      company: order_data['Billing Company'],
-      address_1: order_data['Billing Address1'],
-      address_2: order_data['Billing Address2'],
-      zip_code: order_data['Billing Zip'],
-      city: order_data['Billing City'],
-      country: order_data['Billing Country'],
-      fulfillment_status: order_data['Fulfillment Status'],
-      tracking_number: order_data['Tracking Number'] || '',
-      student_id: student_id(order_data),
-      arrival_date: arrival_date(order_data),
-      products: products(order_data),
-      partner_id: 1,
-      residence_id: find_residence(order_data)&.id
-    )
-
-    # Save or update the order
-    order.save!
-
-    # Clear existing items and add new ones
-    order.items.destroy_all
-
-    order_items.each do |item|
-      next if item['Lineitem name'].blank? # Skip if no product name
-
-      order.items.build(
-        product_name: item['Lineitem name'],
-        sku: item['Lineitem sku'],
-        quantity: item['Lineitem quantity'].to_i,
-        price: item['Lineitem price'].to_f,
-        line_item_id: item['Id']
+    partner = find_partner(order_data)
+    if partner
+       # Assign attributes to the order
+      order.assign_attributes(
+        shopify_order_id: order_data["Id"],
+        status: status,
+        order_date: order_data['Created at'],
+        order_value: order_data['Total'].to_f,
+        currency: order_data['Currency'],
+        payment_status: order_data['Financial Status'],
+        first_name: order_data['Billing Name'],
+        last_name: '', # Assuming 'last_name' is not provided separately
+        email: order_data['Email'],
+        company: order_data['Billing Company'],
+        address_1: order_data['Billing Address1'],
+        address_2: order_data['Billing Address2'],
+        zip_code: order_data['Billing Zip'],
+        city: order_data['Billing City'],
+        country: order_data['Billing Country'],
+        fulfillment_status: order_data['Fulfillment Status'],
+        tracking_number: order_data['Tracking Number'] || '',
+        student_id: student_id(order_data),
+        arrival_date: arrival_date(order_data),
+        products: products(order_data),
+        partner_id: 1,
+        residence_id: find_residence(order_data)&.id
       )
+
+      # Save or update the order
+      order.save!
+
+      # Clear existing items and add new ones
+      order.items.destroy_all
+
+      order_items.each do |item|
+        next if item['Lineitem name'].blank? # Skip if no product name
+
+        order.items.build(
+          product_name: item['Lineitem name'],
+          sku: item['Lineitem sku'],
+          quantity: item['Lineitem quantity'].to_i,
+          price: item['Lineitem price'].to_f,
+          line_item_id: item['Id']
+        )
+      end
+
+      order.save!
+
+      process_refunds(order, order_data)
     end
-
-    order.save!
-
-    process_refunds(order, order_data)
 
   end
 

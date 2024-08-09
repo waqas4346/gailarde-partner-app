@@ -1,0 +1,9 @@
+<% options = current_user.partner.residences.pluck(:name, :id).map { |name, id| [name, id] } %>
+<% options.unshift(['No Residence', '']) %>
+
+<div class="filter_form_field filter_select">
+  <label class="label">Residence</label>
+  <select name="q[residence_id_eq]" id="q_residence_id_eq">
+    <%= options_for_select(options, params.dig(:q, :residence_id_eq)) %>
+  </select>
+</div>
