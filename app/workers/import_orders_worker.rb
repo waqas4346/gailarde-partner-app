@@ -55,7 +55,7 @@ class ImportOrdersWorker
         student_id: student_id(order_data),
         arrival_date: arrival_date(order_data),
         products: products(order_data),
-        partner_id: 1,
+        partner_id: partner.id,
         residence_id: find_residence(order_data)&.id
       )
 
